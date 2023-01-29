@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
     var body: some View {
         TabView{
             GeneralStatistics()
@@ -16,7 +18,7 @@ struct ContentView: View {
                 }
             EspecificStatistics()
                 .tabItem{
-                    Label("Lista", systemImage: "")
+                    Label("Listas", systemImage: "checklist")
                 }
         }
     }
