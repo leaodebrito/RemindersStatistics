@@ -13,19 +13,20 @@ import Shift
 
 struct GeneralStatistics: View {
     
-    @StateObject var eventKitWrapper = Shift.shared
-    @State private var selectedEvent: EKEvent?
+    @StateObject var reminder = EventKitManager()
+        
     
     var body: some View {
-        LazyVStack(alignment: .leading, spacing: 10) {
-            ForEach(eventKitWrapper.events, id: \.self) { event in
-                Text(event.title)
+        NavigationView{
+            ScrollView{
+                VStack{
+                    
+                    Text("\(reminder.reminderTitle())")
+                }
             }
+            .navigationTitle("Dados Gerais")
         }
-        .padding()
-        .task { // wrap async call inside .task modifier
-            try? await eventKitWrapper.fetchEventsForToday()
-        }
+ 
     }
 }
     
