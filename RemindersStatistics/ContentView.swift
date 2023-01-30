@@ -16,9 +16,9 @@ struct ContentView: View {
                 .tabItem{
                     Label("Tarefas", systemImage: "checklist")
                 }
-            EspecificStatistics()
+            GeneralStatistics()
                 .tabItem{
-                    Label("Listas", systemImage: "chart.xyaxis.line")
+                    Label("Estatísticas", systemImage: "chart.xyaxis.line")
                 }
         }
     }

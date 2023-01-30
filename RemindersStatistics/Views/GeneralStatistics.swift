@@ -21,7 +21,7 @@ struct GeneralStatistics: View {
                     
                 }
             }
-            
+            .navigationTitle("Estatísticas")
         }
     }
 }

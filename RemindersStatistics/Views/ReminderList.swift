@@ -62,11 +62,12 @@ struct ReminderList: View {
                     Menu{
                         Button("Novo Lembrete", action: {
                             newReminder = true
-                        }).sheet(isPresented: $newReminder, content: {
-                            NewReminder()
-                        })
+                            print("new reminder")
+                        }).sheet(isPresented: $newReminder, content: {NewReminder()})
+                        
                         Button("Novo Projeto", action: {
                             newProject = true
+                            print("new project")
                         }).sheet(isPresented: $newProject, content: {
                             NewProject()
                         })
