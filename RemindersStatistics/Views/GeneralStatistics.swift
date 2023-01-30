@@ -11,22 +11,18 @@ import Shift
 
 
 
+
 struct GeneralStatistics: View {
-    
-    @StateObject var reminder = EventKitManager()
-        
     
     var body: some View {
         NavigationView{
             ScrollView{
                 VStack{
                     
-                    Text("\(reminder.reminderTitle())")
                 }
             }
-            .navigationTitle("Dados Gerais")
+            
         }
- 
     }
 }
     

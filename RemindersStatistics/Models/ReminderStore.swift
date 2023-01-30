@@ -8,9 +8,9 @@
 import Foundation
 import EventKit
 
-class ReminderStore {
-    static let shared = ReminderStore()
+class ReminderStore: ObservableObject {
     
+    static let shared = ReminderStore()
     private let ekStore = EKEventStore()
     
     var isAvailable: Bool {

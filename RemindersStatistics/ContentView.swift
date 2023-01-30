@@ -12,13 +12,13 @@ struct ContentView: View {
     
     var body: some View {
         TabView{
-            GeneralStatistics()
+            ReminderList()
                 .tabItem{
-                    Label("Geral", systemImage: "chart.xyaxis.line")
+                    Label("Tarefas", systemImage: "checklist")
                 }
             EspecificStatistics()
                 .tabItem{
-                    Label("Listas", systemImage: "checklist")
+                    Label("Listas", systemImage: "chart.xyaxis.line")
                 }
         }
     }

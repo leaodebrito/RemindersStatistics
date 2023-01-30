@@ -13,12 +13,15 @@ import SwiftUI
 class EventKitManager: ObservableObject {
     
     var store = EKEventStore()
-    var lembrete = EKReminder()
-    var remindersss = EKReminder()
     @Published var events: [EKEvent] = []
-
     
+    
+    var lembrete = EKReminder()
+    @Published var reminders: [EKReminder] = []
+    
+
     init() {
+        todaysReminders()
         requestAccessToCalendar()
         todaysEvents()
     }
@@ -42,7 +45,11 @@ class EventKitManager: ObservableObject {
         
     }
     
-    //MARK: - Reminders
+    //MARK: - Reminders section
     
+    func todaysReminders() {
+        
+        
+    }
 
 }
