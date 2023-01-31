@@ -11,12 +11,14 @@ import SwiftUI
 
 
 
-struct ReminderList: View {
+struct ProjectList: View {
     
     @FetchRequest(sortDescriptors: []) var students: FetchedResults<Reminder>
     
     @State var newReminder: Bool = false
     @State var newProject: Bool = false
+    
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         NavigationView{
@@ -37,7 +39,6 @@ struct ReminderList: View {
                         .frame(height: 170)
                     }
                     
-                    .padding(.vertical)
                     
                     Text("Grupos de atividades")
                         .font(.title2)
@@ -45,15 +46,14 @@ struct ReminderList: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading)
                     
-                    LazyVStack{
+                    LazyVGrid(columns: columns){
                         ForEach(0..<10, id: \.self){
                             ActGroup(image: "archivebox", listName: "\($0) - Doutorado")
-                                .padding(.horizontal)
                                 .shadow(radius: 5)
+                                
                         }
                     }
-                    .padding(.bottom)
-                    
+                    .padding(.horizontal)
                 }
             }
             .navigationTitle("Lembretes")
@@ -84,7 +84,7 @@ struct ReminderList: View {
 
 struct ReminderList_Previews: PreviewProvider {
     static var previews: some View {
-        ReminderList()
+        ProjectList()
     }
 }
 

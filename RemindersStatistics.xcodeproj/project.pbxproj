@@ -19,7 +19,7 @@
 		C15395B629884EAD00B85532 /* NewProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15395B529884EAD00B85532 /* NewProject.swift */; };
 		C1C3A84329883273006C4D19 /* Reminders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A84129883273006C4D19 /* Reminders.xcdatamodeld */; };
 		C1C3A845298833B3006C4D19 /* dataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A844298833B3006C4D19 /* dataController.swift */; };
-		C1C3A84729883688006C4D19 /* ReminderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A84629883688006C4D19 /* ReminderList.swift */; };
+		C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A84629883688006C4D19 /* ProjectList.swift */; };
 		C1C3A84A29883A63006C4D19 /* ListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A84929883A63006C4D19 /* ListCard.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		C15395B529884EAD00B85532 /* NewProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProject.swift; sourceTree = "<group>"; };
 		C1C3A84229883273006C4D19 /* Reminders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reminders.xcdatamodel; sourceTree = "<group>"; };
 		C1C3A844298833B3006C4D19 /* dataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataController.swift; sourceTree = "<group>"; };
-		C1C3A84629883688006C4D19 /* ReminderList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderList.swift; sourceTree = "<group>"; };
+		C1C3A84629883688006C4D19 /* ProjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectList.swift; sourceTree = "<group>"; };
 		C1C3A84929883A63006C4D19 /* ListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +95,7 @@
 		C140147B2985C54800ECDDC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C1C3A84629883688006C4D19 /* ReminderList.swift */,
+				C1C3A84629883688006C4D19 /* ProjectList.swift */,
 				C140147C2985C56D00ECDDC2 /* GeneralStatistics.swift */,
 				C140147E2985C57D00ECDDC2 /* EspecificStatistics.swift */,
 			);
@@ -199,7 +199,7 @@
 				C140147D2985C56D00ECDDC2 /* GeneralStatistics.swift in Sources */,
 				C1C3A84329883273006C4D19 /* Reminders.xcdatamodeld in Sources */,
 				C14014692984529E00ECDDC2 /* ContentView.swift in Sources */,
-				C1C3A84729883688006C4D19 /* ReminderList.swift in Sources */,
+				C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */,
 				C140147F2985C57D00ECDDC2 /* EspecificStatistics.swift in Sources */,
 				C14014672984529E00ECDDC2 /* RemindersStatisticsApp.swift in Sources */,
 				C15395B629884EAD00B85532 /* NewProject.swift in Sources */,

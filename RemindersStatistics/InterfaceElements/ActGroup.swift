@@ -12,15 +12,22 @@ struct ActGroup: View {
     @State var image: String = "archivebox"
     @State var listName: String = "Concluídos"
     
+    var alturaRoundedRectangle: CGFloat = 130
+    
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 15)
                 .foregroundColor(.white)
+                .padding(.vertical)
+                .frame(height: alturaRoundedRectangle)
+                .shadow(radius: 5)
             VStack{
-                HStack{
+                VStack{
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 40, height: 40)
+                            .shadow(radius: 5)
                         Image(systemName: image)
                             .resizable()
                             .foregroundColor(.white)
@@ -28,18 +35,18 @@ struct ActGroup: View {
                         
                     }
                     .frame(width: 40, height: 40, alignment: .center)
-                    
-                    Spacer()
+                    .padding(.top)
                     
                     Text("\(listName)")
                         .bold()
-                        .frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)             .font(.title3)
+                        .frame(maxWidth: .infinity, maxHeight: 40, alignment: .center)             .font(.title3)
+                        .padding(.bottom)
                 }
             }
             .padding()
             
         }
-        .frame(minWidth: 140, maxWidth: .infinity, idealHeight: 80, maxHeight: 80, alignment: .center)
+        .frame(minWidth: 140, maxWidth: .infinity, idealHeight: alturaRoundedRectangle-25, maxHeight: alturaRoundedRectangle, alignment: .center)
     }
 }
 
