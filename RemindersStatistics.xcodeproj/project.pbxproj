@@ -34,6 +34,7 @@
 		C15395B02988483A00B85532 /* ActGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActGroup.swift; sourceTree = "<group>"; };
 		C15395B329884CA500B85532 /* NewReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminder.swift; sourceTree = "<group>"; };
 		C15395B529884EAD00B85532 /* NewProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProject.swift; sourceTree = "<group>"; };
+		C17AB13429898F6D00C126F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C1C3A84229883273006C4D19 /* Reminders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reminders.xcdatamodel; sourceTree = "<group>"; };
 		C1C3A844298833B3006C4D19 /* dataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataController.swift; sourceTree = "<group>"; };
 		C1C3A84629883688006C4D19 /* ProjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectList.swift; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		C14014652984529E00ECDDC2 /* RemindersStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				C17AB13429898F6D00C126F9 /* Info.plist */,
 				C14014662984529E00ECDDC2 /* RemindersStatisticsApp.swift */,
 				C14014682984529E00ECDDC2 /* ContentView.swift */,
 				C140147B2985C54800ECDDC2 /* Views */,
@@ -338,9 +340,9 @@
 				DEVELOPMENT_TEAM = J385NJ2F59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RemindersStatistics/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Uso de dados para cálculo de estatísticas relativas aos lembretes";
 				INFOPLIST_KEY_NSRemindersUsageDescription = "Uso de dados para cálculo de estatísticas";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -370,9 +372,9 @@
 				DEVELOPMENT_TEAM = J385NJ2F59;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RemindersStatistics/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "Uso de dados para cálculo de estatísticas relativas aos lembretes";
 				INFOPLIST_KEY_NSRemindersUsageDescription = "Uso de dados para cálculo de estatísticas";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

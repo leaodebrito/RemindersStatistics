@@ -61,23 +61,22 @@ struct ProjectList: View {
                 ToolbarItem(placement: .navigationBarTrailing){
                     Menu{
                         Button("Novo Lembrete", action: {
-                            newReminder = true
+                            newReminder.toggle()
                             print("new reminder")
-                        }).sheet(isPresented: $newReminder, content: {NewReminder()})
-                        
+                        })
                         Button("Novo Projeto", action: {
                             newProject = true
                             print("new project")
-                        }).sheet(isPresented: $newProject, content: {
-                            NewProject()
                         })
                     } label: {
                         Image(systemName: "plus")
                             .resizable()
                             .frame(width: 20, height: 20)
                     }
+                    
                 }
-            }
+            }.sheet(isPresented: $newReminder) {NewReminder()}
+                .sheet(isPresented: $newProject){NewProject()}
         }
     }
 }
@@ -87,7 +86,4 @@ struct ReminderList_Previews: PreviewProvider {
         ProjectList()
     }
 }
-
-
-
 
