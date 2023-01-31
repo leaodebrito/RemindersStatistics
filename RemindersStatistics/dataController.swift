@@ -11,10 +11,18 @@ import Foundation
 
 class DataController: ObservableObject {
  
-    let container = NSPersistentContainer(name: "Reminders")
+    let containerReminder = NSPersistentContainer(name: "Reminders")
+    let containerProject = NSPersistentContainer(name: "Project")
     
     init(){
-        container.loadPersistentStores{ description, error in
+        containerReminder.loadPersistentStores{ description, error in
+            if let error = error {
+                print("Core data falhou ao carregar: \(error.localizedDescription)")
+            }
+            
+        }
+        
+        containerProject.loadPersistentStores{ description, error in
             if let error = error {
                 print("Core data falhou ao carregar: \(error.localizedDescription)")
             }

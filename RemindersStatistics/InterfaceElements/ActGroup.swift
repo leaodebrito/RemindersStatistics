@@ -14,11 +14,13 @@ struct ActGroup: View {
     
     var alturaRoundedRectangle: CGFloat = 130
     
+    @Environment (\.colorScheme) var colorScheme
+    
     
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(.white)
+                .foregroundColor(colorScheme == .light ? brancoBotao : pretoBotao)
                 .padding(.vertical)
                 .frame(height: alturaRoundedRectangle)
                 .shadow(radius: 5)

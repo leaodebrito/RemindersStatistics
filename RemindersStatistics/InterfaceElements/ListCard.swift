@@ -13,15 +13,19 @@ struct ListCard: View {
     @State var count: Int = 0
     @State var listName: String = "Concluídos"
     
+    @Environment (\.colorScheme) var colorScheme
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(.white)
+                .foregroundColor(colorScheme == .light ? brancoBotao : pretoBotao)
+            
             VStack{
                 HStack{
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 40, height: 40)
+                            
                         Image(systemName: image)
                             .resizable()
                             .foregroundColor(.white)

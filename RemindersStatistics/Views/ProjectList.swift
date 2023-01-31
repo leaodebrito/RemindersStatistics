@@ -13,7 +13,7 @@ import SwiftUI
 
 struct ProjectList: View {
     
-    @FetchRequest(sortDescriptors: []) var students: FetchedResults<Reminder>
+    @FetchRequest(sortDescriptors: []) var reminders: FetchedResults<Reminder>
     
     @State var newReminder: Bool = false
     @State var newProject: Bool = false

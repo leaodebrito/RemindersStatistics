@@ -16,7 +16,8 @@ struct RemindersStatisticsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environment(\.managedObjectContext, dataController.containerReminder.viewContext)
+                .environment(\.managedObjectContext, dataController.containerProject.viewContext)
         }
     }
 }
