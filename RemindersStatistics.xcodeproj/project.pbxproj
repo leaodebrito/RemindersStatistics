@@ -20,6 +20,7 @@
 		C17AB1372989C40300C126F9 /* MyTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB1362989C40300C126F9 /* MyTextFieldStyle.swift */; };
 		C17AB1392989D26200C126F9 /* ProjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB1382989D26200C126F9 /* ProjectSelection.swift */; };
 		C17AB13C2989D49800C126F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB13B2989D49800C126F9 /* Colors.swift */; };
+		C17AB13E2989DB1C00C126F9 /* ListOfAllProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB13D2989DB1C00C126F9 /* ListOfAllProjects.swift */; };
 		C1C3A84329883273006C4D19 /* Reminders.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A84129883273006C4D19 /* Reminders.xcdatamodeld */; };
 		C1C3A845298833B3006C4D19 /* dataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A844298833B3006C4D19 /* dataController.swift */; };
 		C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A84629883688006C4D19 /* ProjectList.swift */; };
@@ -41,6 +42,7 @@
 		C17AB1362989C40300C126F9 /* MyTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextFieldStyle.swift; sourceTree = "<group>"; };
 		C17AB1382989D26200C126F9 /* ProjectSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSelection.swift; sourceTree = "<group>"; };
 		C17AB13B2989D49800C126F9 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C17AB13D2989DB1C00C126F9 /* ListOfAllProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAllProjects.swift; sourceTree = "<group>"; };
 		C1C3A84229883273006C4D19 /* Reminders.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reminders.xcdatamodel; sourceTree = "<group>"; };
 		C1C3A844298833B3006C4D19 /* dataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataController.swift; sourceTree = "<group>"; };
 		C1C3A84629883688006C4D19 /* ProjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectList.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				C15395B329884CA500B85532 /* NewReminder.swift */,
 				C15395B529884EAD00B85532 /* NewProject.swift */,
+				C17AB13D2989DB1C00C126F9 /* ListOfAllProjects.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				C14014692984529E00ECDDC2 /* ContentView.swift in Sources */,
 				C17AB13C2989D49800C126F9 /* Colors.swift in Sources */,
 				C17AB1372989C40300C126F9 /* MyTextFieldStyle.swift in Sources */,
+				C17AB13E2989DB1C00C126F9 /* ListOfAllProjects.swift in Sources */,
 				C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */,
 				C140147F2985C57D00ECDDC2 /* EspecificStatistics.swift in Sources */,
 				C14014672984529E00ECDDC2 /* RemindersStatisticsApp.swift in Sources */,

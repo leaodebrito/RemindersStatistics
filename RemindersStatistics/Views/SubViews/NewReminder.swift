@@ -24,6 +24,15 @@ struct NewReminder: View {
                     TextField("Notas...", text: $note, axis:.vertical)
                         .textFieldStyle(MyTextFieldStyle2())
                     
+                    NavigationLink(destination: {
+                        ListOfAllProjects()
+                    }, label: {
+                        ProjectSelection(texto: "Projetos")
+                            .padding(.top, 30)
+                    })
+                    
+                    
+                    
                 }.padding()
             }
             .navigationTitle("Novo Lembrete")
