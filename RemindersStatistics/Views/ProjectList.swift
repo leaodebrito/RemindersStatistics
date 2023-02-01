@@ -46,6 +46,7 @@ struct ProjectList: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading)
                     
+                    
                     LazyVGrid(columns: columns){
                         ForEach(0..<10, id: \.self){
                             ActGroup(image: "archivebox", listName: "\($0) - Doutorado")
