@@ -9,8 +9,6 @@ import SwiftUI
 
 
 
-
-
 struct ProjectList: View {
     
     @Environment(\.managedObjectContext) private var moc
@@ -18,6 +16,20 @@ struct ProjectList: View {
     
     @State var newReminder: Bool = false
     @State var newProject: Bool = false
+    
+    @State var totalProjetos: Int = 0
+    @State var totalProjetosProgramados: Int = 0
+    @State var totalProjetosConcluídos: Int = 0
+    
+
+    //Calculo de quantidade de lembretes
+    func remindersAmount() -> Int{
+        var count = 0
+        for _ in lembrete{
+            count = count + 1
+        }
+        return count
+    }
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -28,12 +40,12 @@ struct ProjectList: View {
                     ScrollView(.horizontal){
                         HStack{
                             //MARK: - Lembretes programados
-                            ListCard(image: "calendar", count: 0, listName: "Programados", colorLight: laranjaClaroBotao, colorDark: laranjaEscuroBotao)
+                            ListCard(image: "calendar", count: $totalProjetosProgramados, listName: "Programados", colorLight: laranjaClaroBotao, colorDark: laranjaEscuroBotao)
                                 .shadow(radius: 10)
                                 .padding(.trailing, 5)
                             
                             //MARK: - Lembretes concluídos
-                            ListCard(image: "checkmark", count: 0, listName: "Concluídos", colorLight: verdeClaroBotao, colorDark: verdeEscuroBotao)
+                            ListCard(image: "checkmark", count: $totalProjetosConcluídos, listName: "Concluídos", colorLight: verdeClaroBotao, colorDark: verdeEscuroBotao)
                                 .shadow(radius: 10)
                                 .padding(.trailing, 5)
                             
@@ -48,7 +60,7 @@ struct ProjectList: View {
                                     
                                 }
                             }, label: {
-                                ListCard(image: "archivebox", count: 0, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
+                                ListCard(image: "archivebox", count: $totalProjetos, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
                                     .shadow(radius: 10)
                             })
                             
@@ -112,6 +124,7 @@ struct ProjectList: View {
                 }
             }.sheet(isPresented: $newReminder) {NewReminder()}
                 .sheet(isPresented: $newProject){NewProject()}
+                .onAppear(perform: {self.totalProjetos = remindersAmount()})
         }
     }
 }

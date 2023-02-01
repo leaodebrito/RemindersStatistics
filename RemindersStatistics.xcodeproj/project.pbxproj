@@ -29,6 +29,7 @@
 		C1DEFF4A298AC7FE007F1E8B /* AllRemindersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */; };
 		C1DEFF4C298AC873007F1E8B /* ReminderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */; };
 		C1DEFF4E298AD069007F1E8B /* ActGroupHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF4D298AD069007F1E8B /* ActGroupHorizontal.swift */; };
+		C1DEFF50298AD726007F1E8B /* RemindersCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF4F298AD726007F1E8B /* RemindersCalculation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRemindersList.swift; sourceTree = "<group>"; };
 		C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetail.swift; sourceTree = "<group>"; };
 		C1DEFF4D298AD069007F1E8B /* ActGroupHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActGroupHorizontal.swift; sourceTree = "<group>"; };
+		C1DEFF4F298AD726007F1E8B /* RemindersCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersCalculation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				C1DEFF47298AC1BB007F1E8B /* ReminderStruct.swift */,
+				C1DEFF4F298AD726007F1E8B /* RemindersCalculation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C140147D2985C56D00ECDDC2 /* GeneralStatistics.swift in Sources */,
+				C1DEFF50298AD726007F1E8B /* RemindersCalculation.swift in Sources */,
 				C1C3A84329883273006C4D19 /* Reminders.xcdatamodeld in Sources */,
 				C14014692984529E00ECDDC2 /* ContentView.swift in Sources */,
 				C17AB13C2989D49800C126F9 /* Colors.swift in Sources */,

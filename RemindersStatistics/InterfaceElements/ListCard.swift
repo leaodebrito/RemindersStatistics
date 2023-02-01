@@ -10,7 +10,7 @@ import SwiftUI
 struct ListCard: View {
     
     @State var image: String = "archivebox"
-    @State var count: Int = 0
+    @Binding var count: Int
     @State var listName: String = "Concluídos"
     @State var colorLight: Color = .gray
     @State var colorDark: Color = .black
@@ -59,8 +59,9 @@ struct ListCard: View {
     }
 }
 
-struct ListCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ListCard()
-    }
-}
+//struct ListCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListCard(count: 0)
+//    }
+//}
+
