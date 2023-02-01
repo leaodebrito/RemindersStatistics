@@ -51,7 +51,7 @@ struct NewProject: View {
                     .padding(.horizontal)
                     
                     //Retangulo central
-                    ///Escolha da corde projeto
+                    ///Escolha da cor de projeto
                     ZStack(alignment: .center){
                         RoundedRectangle(cornerRadius: 15)
                             .frame(height: 100)
@@ -92,6 +92,47 @@ struct NewProject: View {
                     }
                     .padding(.horizontal)
                     
+                    //TODO: - Retangulo inferior
+                    ///Escolha do ícone de projeto
+                    ZStack(alignment: .center){
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(height: 100)
+                            .foregroundColor(colorScheme == .light ? brancoBotao : pretoBotao)
+                        
+                        HStack{
+                            Button(action: {
+                                print("cor azul")
+                                corEscolhida = .blue
+                                
+                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.blue)})
+                            
+                            Button(action: {
+                                print("cor vermelha")
+                                corEscolhida = .red
+                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.red)})
+                            
+                            Button(action: {
+                                print("cor verde")
+                                corEscolhida = .green
+                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.green)})
+                            
+                            Button(action: {
+                                print("cor amarela")
+                                corEscolhida = .yellow
+                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.yellow)})
+                            
+                            Button(action: {
+                                print("cor larajna")
+                                corEscolhida = .orange
+                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.orange)})
+                            
+                            Button(action: {
+                                print("cor verde")
+                                corEscolhida = .green
+                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.green)})
+                        }
+                    }
+                    .padding(.horizontal)
                     
                 }
                 
