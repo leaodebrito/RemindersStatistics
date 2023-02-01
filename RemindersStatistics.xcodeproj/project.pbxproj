@@ -25,6 +25,9 @@
 		C1C3A845298833B3006C4D19 /* dataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A844298833B3006C4D19 /* dataController.swift */; };
 		C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A84629883688006C4D19 /* ProjectList.swift */; };
 		C1C3A84A29883A63006C4D19 /* ListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C3A84929883A63006C4D19 /* ListCard.swift */; };
+		C1DEFF48298AC1BB007F1E8B /* ReminderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF47298AC1BB007F1E8B /* ReminderStruct.swift */; };
+		C1DEFF4A298AC7FE007F1E8B /* AllRemindersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */; };
+		C1DEFF4C298AC873007F1E8B /* ReminderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		C1C3A844298833B3006C4D19 /* dataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataController.swift; sourceTree = "<group>"; };
 		C1C3A84629883688006C4D19 /* ProjectList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectList.swift; sourceTree = "<group>"; };
 		C1C3A84929883A63006C4D19 /* ListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCard.swift; sourceTree = "<group>"; };
+		C1DEFF47298AC1BB007F1E8B /* ReminderStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStruct.swift; sourceTree = "<group>"; };
+		C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRemindersList.swift; sourceTree = "<group>"; };
+		C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 				C14014662984529E00ECDDC2 /* RemindersStatisticsApp.swift */,
 				C14014682984529E00ECDDC2 /* ContentView.swift */,
 				C140147B2985C54800ECDDC2 /* Views */,
+				C1DEFF46298AC146007F1E8B /* Model */,
 				C1C3A848298839FE006C4D19 /* InterfaceElements */,
 				C17AB13A2989D47C00C126F9 /* Helper */,
 				C140146A2984529F00ECDDC2 /* Assets.xcassets */,
@@ -108,6 +115,7 @@
 				C1C3A84629883688006C4D19 /* ProjectList.swift */,
 				C140147C2985C56D00ECDDC2 /* GeneralStatistics.swift */,
 				C140147E2985C57D00ECDDC2 /* EspecificStatistics.swift */,
+				C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */,
 				C15395B229884C8F00B85532 /* SubViews */,
 			);
 			path = Views;
@@ -119,6 +127,7 @@
 				C15395B329884CA500B85532 /* NewReminder.swift */,
 				C15395B529884EAD00B85532 /* NewProject.swift */,
 				C17AB13D2989DB1C00C126F9 /* ListOfAllProjects.swift */,
+				C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -140,6 +149,14 @@
 				C17AB1382989D26200C126F9 /* ProjectSelection.swift */,
 			);
 			path = InterfaceElements;
+			sourceTree = "<group>";
+		};
+		C1DEFF46298AC146007F1E8B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1DEFF47298AC1BB007F1E8B /* ReminderStruct.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +241,12 @@
 				C17AB13C2989D49800C126F9 /* Colors.swift in Sources */,
 				C17AB1372989C40300C126F9 /* MyTextFieldStyle.swift in Sources */,
 				C17AB13E2989DB1C00C126F9 /* ListOfAllProjects.swift in Sources */,
+				C1DEFF4C298AC873007F1E8B /* ReminderDetail.swift in Sources */,
 				C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */,
+				C1DEFF48298AC1BB007F1E8B /* ReminderStruct.swift in Sources */,
 				C140147F2985C57D00ECDDC2 /* EspecificStatistics.swift in Sources */,
 				C14014672984529E00ECDDC2 /* RemindersStatisticsApp.swift in Sources */,
+				C1DEFF4A298AC7FE007F1E8B /* AllRemindersList.swift in Sources */,
 				C15395B629884EAD00B85532 /* NewProject.swift in Sources */,
 				C1C3A845298833B3006C4D19 /* dataController.swift in Sources */,
 				C1C3A84A29883A63006C4D19 /* ListCard.swift in Sources */,

@@ -13,7 +13,8 @@ import SwiftUI
 
 struct ProjectList: View {
     
-    @FetchRequest(sortDescriptors: []) var reminders: FetchedResults<Reminder>
+    @Environment(\.managedObjectContext) private var moc
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "titulo", ascending: true)]) var lembrete: FetchedResults<Reminder>
     
     @State var newReminder: Bool = false
     @State var newProject: Bool = false
@@ -34,8 +35,20 @@ struct ProjectList: View {
                                 .shadow(radius: 10)
                                 .padding(.trailing, 5)
                             
-                            ListCard(image: "archivebox", count: 0, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
-                                .shadow(radius: 10)
+                            NavigationLink(destination: {
+                                
+                                List(lembrete) { lembrete in
+                                    NavigationLink(destination: ReminderDetail(lembrete: lembrete), label: {
+                                        Text(lembrete.titulo ?? "")
+                                    })
+                                    .navigationTitle("Todos")
+                                    
+                                }
+                            }, label: {
+                                ListCard(image: "archivebox", count: 0, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
+                                    .shadow(radius: 10)
+                            })
+                            
                             
                             
                             
