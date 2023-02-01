@@ -27,30 +27,30 @@ struct ProjectList: View {
                 VStack{
                     ScrollView(.horizontal){
                         HStack{
+                            //MARK: - Lembretes programados
                             ListCard(image: "calendar", count: 0, listName: "Programados", colorLight: laranjaClaroBotao, colorDark: laranjaEscuroBotao)
                                 .shadow(radius: 10)
                                 .padding(.trailing, 5)
                             
+                            //MARK: - Lembretes concluídos
                             ListCard(image: "checkmark", count: 0, listName: "Concluídos", colorLight: verdeClaroBotao, colorDark: verdeEscuroBotao)
                                 .shadow(radius: 10)
                                 .padding(.trailing, 5)
                             
+                            
+                            //MARK: - Todos os lembretes
                             NavigationLink(destination: {
-                                
                                 List(lembrete) { lembrete in
                                     NavigationLink(destination: ReminderDetail(lembrete: lembrete), label: {
                                         Text(lembrete.titulo ?? "")
                                     })
-                                    .navigationTitle("Todos")
+                                    .navigationTitle("Todos os lembretes")
                                     
                                 }
                             }, label: {
                                 ListCard(image: "archivebox", count: 0, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
                                     .shadow(radius: 10)
                             })
-                            
-                            
-                            
                             
                         }
                         .padding(.horizontal)
@@ -64,7 +64,23 @@ struct ProjectList: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading)
                     
+                    //MARK: - Lista Inbox
+                    NavigationLink(destination: {
+                        List(lembrete) { lembrete in
+                            NavigationLink(destination: ReminderDetail(lembrete: lembrete), label: {
+                                Text(lembrete.titulo ?? "")
+                            })
+                            .navigationTitle("Inbox")
+                            
+                        }
+                        
+                    }, label: {
+                        ActGroupHorizontal(listName: "Inbox", alturaRoundedRectangle: 100)
+                            .padding(.horizontal)
+                    })
+                    .padding(.bottom)
                     
+                    //MARK: - Grupos de atividades
                     LazyVGrid(columns: columns){
                         ForEach(0..<10, id: \.self){
                             ActGroup(image: "archivebox", listName: "\($0) - Doutorado")

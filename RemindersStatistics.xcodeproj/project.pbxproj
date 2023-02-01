@@ -28,6 +28,7 @@
 		C1DEFF48298AC1BB007F1E8B /* ReminderStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF47298AC1BB007F1E8B /* ReminderStruct.swift */; };
 		C1DEFF4A298AC7FE007F1E8B /* AllRemindersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */; };
 		C1DEFF4C298AC873007F1E8B /* ReminderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */; };
+		C1DEFF4E298AD069007F1E8B /* ActGroupHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DEFF4D298AD069007F1E8B /* ActGroupHorizontal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		C1DEFF47298AC1BB007F1E8B /* ReminderStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderStruct.swift; sourceTree = "<group>"; };
 		C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRemindersList.swift; sourceTree = "<group>"; };
 		C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDetail.swift; sourceTree = "<group>"; };
+		C1DEFF4D298AD069007F1E8B /* ActGroupHorizontal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActGroupHorizontal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				C15395B02988483A00B85532 /* ActGroup.swift */,
 				C17AB1362989C40300C126F9 /* MyTextFieldStyle.swift */,
 				C17AB1382989D26200C126F9 /* ProjectSelection.swift */,
+				C1DEFF4D298AD069007F1E8B /* ActGroupHorizontal.swift */,
 			);
 			path = InterfaceElements;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				C1DEFF48298AC1BB007F1E8B /* ReminderStruct.swift in Sources */,
 				C140147F2985C57D00ECDDC2 /* EspecificStatistics.swift in Sources */,
 				C14014672984529E00ECDDC2 /* RemindersStatisticsApp.swift in Sources */,
+				C1DEFF4E298AD069007F1E8B /* ActGroupHorizontal.swift in Sources */,
 				C1DEFF4A298AC7FE007F1E8B /* AllRemindersList.swift in Sources */,
 				C15395B629884EAD00B85532 /* NewProject.swift in Sources */,
 				C1C3A845298833B3006C4D19 /* dataController.swift in Sources */,
