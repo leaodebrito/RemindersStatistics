@@ -36,7 +36,7 @@ struct NewProject: View {
                                 
                                 Image(systemName: figuraProjeto)
                                     .resizable()
-                                    .frame(width: 60, height: 60)
+                                    .frame(width: 60, height: 55)
                                     .foregroundColor(.white)
                             }
                             .padding(.bottom)
@@ -101,35 +101,29 @@ struct NewProject: View {
                         
                         HStack{
                             Button(action: {
-                                print("cor azul")
-                                corEscolhida = .blue
-                                
-                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.blue)})
+                                figuraProjeto = "list.bullet"
+                            }, label: {circleSymbols(color: .gray, symbols: "list.bullet")})
                             
                             Button(action: {
-                                print("cor vermelha")
-                                corEscolhida = .red
-                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.red)})
+                                figuraProjeto = "list.number"
+                            }, label: {circleSymbols(color: .gray, symbols: "list.number")})
                             
                             Button(action: {
-                                print("cor verde")
-                                corEscolhida = .green
-                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.green)})
+                                figuraProjeto = "studentdesk"
+                            }, label: {circleSymbols(color: .gray, symbols: "studentdesk")})
                             
                             Button(action: {
-                                print("cor amarela")
-                                corEscolhida = .yellow
-                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.yellow)})
+                                figuraProjeto = "pencil.and.ruler"
+                            }, label: {circleSymbols(color: .gray, symbols: "pencil.and.ruler")})
                             
                             Button(action: {
-                                print("cor larajna")
-                                corEscolhida = .orange
-                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.orange)})
+                                figuraProjeto = "lamp.desk"
+                            }, label: {circleSymbols(color: .gray, symbols: "lamp.desk")})
                             
                             Button(action: {
-                                print("cor verde")
-                                corEscolhida = .green
-                            }, label: {Circle().frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo).foregroundColor(.green)})
+                                print("person")
+                                figuraProjeto = "person"
+                            }, label: {circleSymbols(color: .gray, symbols: "person")})
                         }
                     }
                     .padding(.horizontal)
@@ -151,5 +145,25 @@ struct NewProject: View {
 struct NewProject_Previews: PreviewProvider {
     static var previews: some View {
         NewProject()
+    }
+}
+
+
+struct circleSymbols: View{
+    @State var color: Color = .blue
+    @State var symbols: String = "arquivebox"
+    @State var alturaLarguraCirculo: CGFloat = 40
+    
+    var body: some View{
+        ZStack{
+            Circle()
+                .frame(width: alturaLarguraCirculo, height: alturaLarguraCirculo)
+                .foregroundColor(color)
+            
+            Image(systemName: symbols)
+                .resizable()
+                .frame(width: alturaLarguraCirculo-17, height: alturaLarguraCirculo-20)
+                .foregroundColor(.white)
+        }
     }
 }
