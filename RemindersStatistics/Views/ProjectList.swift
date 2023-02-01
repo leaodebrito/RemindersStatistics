@@ -26,17 +26,22 @@ struct ProjectList: View {
                 VStack{
                     ScrollView(.horizontal){
                         HStack{
-                            ListCard(image: "archivebox", count: 0, listName: "Todos")
+                            ListCard(image: "calendar", count: 0, listName: "Programados", colorLight: laranjaClaroBotao, colorDark: laranjaEscuroBotao)
                                 .shadow(radius: 10)
-                            ListCard(image: "checkmark", count: 0, listName: "Concluídos")
+                                .padding(.trailing, 5)
+                            
+                            ListCard(image: "checkmark", count: 0, listName: "Concluídos", colorLight: verdeClaroBotao, colorDark: verdeEscuroBotao)
                                 .shadow(radius: 10)
-                            ListCard(image: "calendar", count: 0, listName: "Programados")
+                                .padding(.trailing, 5)
+                            
+                            ListCard(image: "archivebox", count: 0, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
                                 .shadow(radius: 10)
-                            ListCard(image: "archivebox", count: 0, listName: "Concluídos")
-                                .shadow(radius: 10)
+                            
+                            
+                            
                         }
                         .padding(.horizontal)
-                        .frame(height: 170)
+                        .frame(height: 250)
                     }
                     
                     

@@ -12,50 +12,50 @@ struct ListCard: View {
     @State var image: String = "archivebox"
     @State var count: Int = 0
     @State var listName: String = "Concluídos"
+    @State var colorLight: Color = .gray
+    @State var colorDark: Color = .black
+
     
     @Environment (\.colorScheme) var colorScheme
     
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(colorScheme == .light ? brancoBotao : pretoBotao)
+                .foregroundColor(colorScheme == .light ? colorLight : colorDark)
             
             VStack{
-                HStack{
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 40, height: 40)
-                            
-                        Image(systemName: image)
-                            .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: 20, height: 20)
-                            
-                        
-                    }
-                    .frame(width: 40, height: 40, alignment: .center)
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 45, height: 45)
+                        .foregroundColor(colorScheme == .light ? colorDark : colorLight)
                     
-                    Spacer()
-                    
-                    Text("\(count)")
-                        .font(.title)
-                        .bold()
-                        .foregroundColor(colorScheme == .light ? .black : .gray)
+                    Image(systemName: image)
+                        .resizable()
+                        .foregroundColor(.white)
+                        .frame(width: 30, height: 30)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
+                Spacer()
+                
+                Text("\(count)")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(colorScheme == .light ? .black : .white)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 Text("\(listName)")
-                    .font(.title2)
+                    .font(.title3)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.top)
-                    .foregroundColor(colorScheme == .light ? .black : .gray)
+                    .padding([.top])
+                    .foregroundColor(colorScheme == .light ? .black : .white)
                 
             }
             .padding()
             
         }
-        .frame(minWidth: 140, maxWidth: .infinity, idealHeight: 130, maxHeight: 130, alignment: .center)
+        .frame(minWidth: 150, maxWidth: 200, idealHeight: 200, maxHeight: 200, alignment: .center)
     }
 }
 
