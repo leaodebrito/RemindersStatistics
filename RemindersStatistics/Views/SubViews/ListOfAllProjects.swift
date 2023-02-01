@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ListOfAllProjects: View {
+    
+    @State var listaDeProjetos: [String] = ["Doutorado", "Inbox", "Alice", "Projetos de aplicativos", "Sonhos", "Formação Pessoal", "Pesquisa", "LB Arquitetura e Tecnologia", ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            ForEach(listaDeProjetos, id: \.self) { item in
+                
+                Text(item)
+                
+            }
+        }
+        .navigationTitle("Lista de projetos")
     }
 }
 
@@ -18,3 +28,6 @@ struct ListOfAllProjects_Previews: PreviewProvider {
         ListOfAllProjects()
     }
 }
+
+
+

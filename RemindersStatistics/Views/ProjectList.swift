@@ -27,13 +27,13 @@ struct ProjectList: View {
                     ScrollView(.horizontal){
                         HStack{
                             ListCard(image: "archivebox", count: 0, listName: "Todos")
-                                .shadow(radius: 5)
+                                .shadow(radius: 10)
                             ListCard(image: "checkmark", count: 0, listName: "Concluídos")
-                                .shadow(radius: 5)
+                                .shadow(radius: 10)
                             ListCard(image: "calendar", count: 0, listName: "Programados")
-                                .shadow(radius: 5)
+                                .shadow(radius: 10)
                             ListCard(image: "archivebox", count: 0, listName: "Concluídos")
-                                .shadow(radius: 5)
+                                .shadow(radius: 10)
                         }
                         .padding(.horizontal)
                         .frame(height: 170)
@@ -49,7 +49,7 @@ struct ProjectList: View {
                     LazyVGrid(columns: columns){
                         ForEach(0..<10, id: \.self){
                             ActGroup(image: "archivebox", listName: "\($0) - Doutorado")
-                                .shadow(radius: 5)
+                                .shadow(radius: 10)
                                 
                         }
                     }

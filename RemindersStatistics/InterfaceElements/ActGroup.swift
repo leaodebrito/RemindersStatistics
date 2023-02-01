@@ -41,8 +41,10 @@ struct ActGroup: View {
                     
                     Text("\(listName)")
                         .bold()
-                        .frame(maxWidth: .infinity, maxHeight: 40, alignment: .center)             .font(.title3)
+                        .frame(maxWidth: .infinity, maxHeight: 40, alignment: .center)
+                        .font(.title3)
                         .padding(.bottom)
+                        .foregroundColor(colorScheme == .light ? .black : .gray)
                 }
             }
             .padding()

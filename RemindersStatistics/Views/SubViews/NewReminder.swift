@@ -36,6 +36,15 @@ struct NewReminder: View {
                 }.padding()
             }
             .navigationTitle("Novo Lembrete")
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    Button(action: {
+                        print("Adicionado")
+                    }, label: {
+                        Text("Adicionar")
+                    })
+                })
+            }
         }
     }
 }

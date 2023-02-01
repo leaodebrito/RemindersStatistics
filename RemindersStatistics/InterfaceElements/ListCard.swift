@@ -30,6 +30,7 @@ struct ListCard: View {
                             .resizable()
                             .foregroundColor(.white)
                             .frame(width: 20, height: 20)
+                            
                         
                     }
                     .frame(width: 40, height: 40, alignment: .center)
@@ -39,14 +40,16 @@ struct ListCard: View {
                     Text("\(count)")
                         .font(.title)
                         .bold()
+                        .foregroundColor(colorScheme == .light ? .black : .gray)
                 }
                 
                 
                 Text("\(listName)")
+                    .font(.title2)
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.top)
-                    .font(.title3)
+                    .foregroundColor(colorScheme == .light ? .black : .gray)
                 
             }
             .padding()
