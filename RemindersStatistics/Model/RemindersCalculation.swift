@@ -6,25 +6,8 @@
 //
 
 import Foundation
-import SwiftUI
 import CoreData
+import SwiftUI
 
 
-struct RemindersCalculation {
-    
-    var lembrete = [FetchedResults<Reminder>]().self
 
-    
-    func remindersAmount() -> Int{
-        var count = 0
-        for _ in lembrete{
-            count = count + 1
-        }
-        return count
-    }
-    
-    
-    
-}
-
-let remindersCalculations = RemindersCalculation()

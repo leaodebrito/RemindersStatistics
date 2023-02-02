@@ -99,8 +99,8 @@
 				C17AB13A2989D47C00C126F9 /* Helper */,
 				C140146A2984529F00ECDDC2 /* Assets.xcassets */,
 				C140146C2984529F00ECDDC2 /* Preview Content */,
-				C1C3A84129883273006C4D19 /* Reminders.xcdatamodeld */,
 				C1C3A844298833B3006C4D19 /* dataController.swift */,
+				C1C3A84129883273006C4D19 /* Reminders.xcdatamodeld */,
 			);
 			path = RemindersStatistics;
 			sourceTree = "<group>";

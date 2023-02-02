@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 
 
@@ -14,6 +15,7 @@ struct ProjectList: View {
     @Environment(\.managedObjectContext) private var moc
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "titulo", ascending: true)]) var lembrete: FetchedResults<Reminder>
     
+    
     @State var newReminder: Bool = false
     @State var newProject: Bool = false
     
@@ -21,7 +23,8 @@ struct ProjectList: View {
     @State var totalProjetosProgramados: Int = 0
     @State var totalProjetosConcluídos: Int = 0
     
-
+    
+    
     //Calculo de quantidade de lembretes
     func remindersAmount() -> Int{
         var count = 0
