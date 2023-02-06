@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Shift
 
 @main
 struct RemindersStatisticsApp: App {

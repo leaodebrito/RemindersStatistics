@@ -7,7 +7,6 @@
 
 import EventKit
 import SwiftUI
-import Shift
 
 
 

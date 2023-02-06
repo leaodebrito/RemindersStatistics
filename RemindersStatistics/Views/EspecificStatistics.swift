@@ -7,8 +7,6 @@
 
 import EventKit
 import SwiftUI
-import Shift
-
 
 
 struct EspecificStatistics: View {

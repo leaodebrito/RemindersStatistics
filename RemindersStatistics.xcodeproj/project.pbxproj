@@ -14,6 +14,7 @@
 		C140147D2985C56D00ECDDC2 /* GeneralStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140147C2985C56D00ECDDC2 /* GeneralStatistics.swift */; };
 		C140147F2985C57D00ECDDC2 /* EspecificStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140147E2985C57D00ECDDC2 /* EspecificStatistics.swift */; };
 		C14014882985FC2200ECDDC2 /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = C14014872985FC2200ECDDC2 /* Shift */; };
+		C14135CB29919A3100C4294D /* ReminderListDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14135CA29919A3100C4294D /* ReminderListDetail.swift */; };
 		C15395B12988483A00B85532 /* ActGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15395B02988483A00B85532 /* ActGroup.swift */; };
 		C15395B429884CA500B85532 /* NewReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15395B329884CA500B85532 /* NewReminder.swift */; };
 		C15395B629884EAD00B85532 /* NewProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15395B529884EAD00B85532 /* NewProject.swift */; };
@@ -40,6 +41,7 @@
 		C140146D2984529F00ECDDC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C140147C2985C56D00ECDDC2 /* GeneralStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStatistics.swift; sourceTree = "<group>"; };
 		C140147E2985C57D00ECDDC2 /* EspecificStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EspecificStatistics.swift; sourceTree = "<group>"; };
+		C14135CA29919A3100C4294D /* ReminderListDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListDetail.swift; sourceTree = "<group>"; };
 		C15395B02988483A00B85532 /* ActGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActGroup.swift; sourceTree = "<group>"; };
 		C15395B329884CA500B85532 /* NewReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminder.swift; sourceTree = "<group>"; };
 		C15395B529884EAD00B85532 /* NewProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProject.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				C15395B529884EAD00B85532 /* NewProject.swift */,
 				C17AB13D2989DB1C00C126F9 /* ListOfAllProjects.swift */,
 				C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */,
+				C14135CA29919A3100C4294D /* ReminderListDetail.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				C14014692984529E00ECDDC2 /* ContentView.swift in Sources */,
 				C17AB13C2989D49800C126F9 /* Colors.swift in Sources */,
 				C17AB1372989C40300C126F9 /* MyTextFieldStyle.swift in Sources */,
+				C14135CB29919A3100C4294D /* ReminderListDetail.swift in Sources */,
 				C17AB13E2989DB1C00C126F9 /* ListOfAllProjects.swift in Sources */,
 				C1DEFF4C298AC873007F1E8B /* ReminderDetail.swift in Sources */,
 				C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */,
