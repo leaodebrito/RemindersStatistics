@@ -46,9 +46,7 @@ struct ReminderListDetail_Previews: PreviewProvider {
 
 
 struct barraDeEvolucao: View{
-    
-    
-    
+
     let alturaBarra: CGFloat = 10
     let corner: CGFloat = 5
     

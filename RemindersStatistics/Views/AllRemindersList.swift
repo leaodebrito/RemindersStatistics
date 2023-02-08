@@ -20,7 +20,7 @@ struct AllRemindersList: View {
                 })
                 
             }
-            .listStyle(.plain)
+            .listStyle(.inset)
             .navigationTitle("Todos")
 
         }
