@@ -23,6 +23,8 @@ struct ProjectList: View {
     @State var totalProjetosProgramados: Int = 0
     @State var totalProjetosConcluídos: Int = 0
     
+    @State var isPresentedLista: Bool = false
+    
     
     
     //Calculo de quantidade de lembretes

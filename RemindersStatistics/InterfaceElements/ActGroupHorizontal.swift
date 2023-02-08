@@ -48,7 +48,7 @@ struct ActGroupHorizontal: View {
                         .bold()
                         .frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
                         .font(.title3)
-                        .foregroundColor(colorScheme == .light ? .black : .gray)
+                        .foregroundColor(colorScheme == .light ? .black : .white)
                         .padding(.leading)
                 }
             }
