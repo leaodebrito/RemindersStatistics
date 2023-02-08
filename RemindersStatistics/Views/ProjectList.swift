@@ -56,6 +56,7 @@ struct ProjectList: View {
                             
                             
                             //MARK: - Todos os lembretes
+                            //TODO: - implantar sheetview from list₢
                             NavigationLink(destination: {
                                 List(lembrete) { lembrete in
                                     NavigationLink(destination: ReminderDetail(lembrete: lembrete), label: {
