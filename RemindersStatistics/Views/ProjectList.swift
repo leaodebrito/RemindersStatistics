@@ -82,7 +82,7 @@ struct ProjectList: View {
                     NavigationLink(destination: {
                         List(lembrete) { lembrete in
                             NavigationLink(destination: ReminderDetail(lembrete: lembrete), label: {
-                                Text(lembrete.titulo ?? "")
+                                ReminderListDetail(nomeLembrete: lembrete.titulo ?? "-", notaLembrete: lembrete.notas ?? "-", concluido: lembrete.flag, status: lembrete.status)
                             })
                             .navigationTitle("Inbox")
                             

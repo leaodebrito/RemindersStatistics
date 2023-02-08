@@ -21,19 +21,16 @@ struct ReminderDetail: View {
                 
                 TextField("\(lembrete.titulo ?? "Novo Título")", text: $novoTítulo)
                     .font(.title)
-                    .foregroundColor(.black)
                     
                 Divider()
                 
                 TextField("Nota: \(lembrete.notas ?? "Nova nota")", text: $novaNota)
                     .font(.title3)
-                    .foregroundColor(.black)
                 
                 Divider()
                 
                 TextField("URL: \(lembrete.externalLink ?? "URL")", text: $novoURL)
                     .font(.title3)
-                    .foregroundColor(.black)
                 
                 Divider()
                 
@@ -76,6 +73,15 @@ struct ReminderDetail: View {
                     
             }
             .padding(.horizontal)
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button(action: {
+                        print("ok")
+                    }, label: {
+                        Text("Salvar!")
+                    })
+                }
+            }
         }
     }
 }
