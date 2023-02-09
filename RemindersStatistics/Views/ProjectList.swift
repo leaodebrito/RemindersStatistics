@@ -56,9 +56,9 @@ struct ProjectList: View {
                             
                             
                             //MARK: - Todos os lembretes
-                            //TODO: - implantar sheetview from list₢
+                            //TODO: - implantar sheetview from lista
                             NavigationLink(destination: {
-                                List(lembrete) { lembrete in
+                                ForEach(lembrete) { lembrete in
                                     NavigationLink(destination: ReminderDetail(lembrete: lembrete), label: {
                                         ReminderListDetail(nomeLembrete: lembrete.titulo ?? "-", notaLembrete: lembrete.notas ?? "-", concluido: lembrete.flag, status: lembrete.status)
                                     })
@@ -84,13 +84,9 @@ struct ProjectList: View {
                     //MARK: - Lista Inbox
                     NavigationLink(destination: {
                         List(lembrete) { lembrete in
-                            NavigationLink(destination: ReminderDetail(lembrete: lembrete), label: {
-                                ReminderListDetail(nomeLembrete: lembrete.titulo ?? "-", notaLembrete: lembrete.notas ?? "-", concluido: lembrete.flag, status: lembrete.status)
-                            })
+                            reminderButton(lembrete: lembrete)
                             .navigationTitle("Inbox")
-                            
                         }
-                        
                     }, label: {
                         ActGroupHorizontal(listName: "Inbox", alturaRoundedRectangle: 100)
                             .padding(.horizontal)
@@ -140,3 +136,22 @@ struct ReminderList_Previews: PreviewProvider {
     }
 }
 
+
+
+
+
+
+
+//MARK: - Abre sheetview a partir da lista de tarefas
+struct reminderButton: View{
+    @State var showSheet = false
+    var lembrete: Reminder
+
+    var body: some View {
+        Button(action:{self.showSheet = true}){
+            ReminderListDetail(nomeLembrete: lembrete.titulo ?? "-", notaLembrete: lembrete.notas ?? "-", concluido: lembrete.flag, status: lembrete.status)
+        }.sheet(isPresented: $showSheet){
+            ReminderDetail(lembrete: lembrete)
+        }
+    }
+}

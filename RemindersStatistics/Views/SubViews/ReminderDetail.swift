@@ -15,17 +15,23 @@ struct ReminderDetail: View {
     @State var novaNota: String = ""
     @State var novoURL: String = ""
     
+    
+    @Environment (\.colorScheme) var colorScheme
 
     
     var body: some View {
         ScrollView{
             VStack{
                 
-                TextField("",text: $novoTítulo)
+                TextEditor(text: $novoTítulo)
                     .font(.title)
+                    .bold()
+                    .foregroundColor(colorScheme == .light ? .black : .white)
+                    .lineLimit(2)
                     .onAppear(){
                         novoTítulo = lembrete.titulo ?? ""
                     }
+                    .padding(.top, 15)
                     
                 Divider()
                 
@@ -34,11 +40,12 @@ struct ReminderDetail: View {
                     .onAppear(){
                         novaNota = lembrete.notas ?? ""
                     }
+                    .frame(height: 200)
                 
                 
                 Divider()
                 
-                TextField("", text: $novoURL)
+                TextEditor(text: $novoURL)
                     .font(.title3)
                     .foregroundColor(.gray)
                     .onAppear(){
@@ -55,7 +62,7 @@ struct ReminderDetail: View {
                     Button(action: {
                         print("ok")
                     }, label: {
-                        imagemBotao(imagem: "flag", alturaImagem: 30, larguraImagem: 25)
+                        imagemBotao(imagem: "flag", alturaImagem: 30, larguraImagem: 22)
                     })
                     
                     Spacer()
@@ -79,9 +86,25 @@ struct ReminderDetail: View {
                         imagemBotao(imagem: "calendar", alturaImagem: 30, larguraImagem: 30)
                     })
                     
+                    Spacer()
+                        .frame(width: 35)
+                    
                     //Status
+                    Button(action: {
+                        print("ok")
+                    }, label: {
+                        imagemBotao(imagem: "play", alturaImagem: 25, larguraImagem: 20)
+                    })
                     
+                    Spacer()
+                        .frame(width: 35)
                     
+                    //Lembrete
+                    Button(action: {
+                        print("ok")
+                    }, label: {
+                        imagemBotao(imagem: "alarm", alturaImagem: 25, larguraImagem: 25)
+                    })
                 }
                 
                 
@@ -119,3 +142,5 @@ struct imagemBotao: View{
             .frame(width: larguraImagem, height: alturaImagem)
     }
 }
+
+
