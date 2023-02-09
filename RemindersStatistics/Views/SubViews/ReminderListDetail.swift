@@ -26,14 +26,18 @@ struct ReminderListDetail: View {
                     .bold()
                     .padding(.bottom, 2)
                 
+                barraDeEvolucao(status: status)
+                    .padding(.vertical,2)
+                
                 Text(notaLembrete)
                     .font(.callout)
+                    .multilineTextAlignment(.leading)
                 
-                barraDeEvolucao(status: status)
+                
             
             }
         }
-        .frame(maxWidth: .infinity, minHeight: 60, idealHeight: 80, alignment: .leading)
+        .frame(maxWidth: .infinity, minHeight: 60, idealHeight: 120, alignment: .leading)
         
     }
 }

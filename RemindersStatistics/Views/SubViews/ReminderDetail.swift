@@ -15,22 +15,35 @@ struct ReminderDetail: View {
     @State var novaNota: String = ""
     @State var novoURL: String = ""
     
+
+    
     var body: some View {
         ScrollView{
             VStack{
                 
-                TextField("\(lembrete.titulo ?? "Novo Título")", text: $novoTítulo)
+                TextField("",text: $novoTítulo)
                     .font(.title)
+                    .onAppear(){
+                        novoTítulo = lembrete.titulo ?? ""
+                    }
                     
                 Divider()
                 
-                TextField("Nota: \(lembrete.notas ?? "Nova nota")", text: $novaNota)
-                    .font(.title3)
+                TextEditor(text: $novaNota)
+                    .foregroundColor(.secondary)
+                    .onAppear(){
+                        novaNota = lembrete.notas ?? ""
+                    }
+                
                 
                 Divider()
                 
-                TextField("URL: \(lembrete.externalLink ?? "URL")", text: $novoURL)
+                TextField("", text: $novoURL)
                     .font(.title3)
+                    .foregroundColor(.gray)
+                    .onAppear(){
+                        novoURL = lembrete.externalLink ?? "URL"
+                    }
                 
                 Divider()
                 
@@ -65,6 +78,9 @@ struct ReminderDetail: View {
                     }, label: {
                         imagemBotao(imagem: "calendar", alturaImagem: 30, larguraImagem: 30)
                     })
+                    
+                    //Status
+                    
                     
                 }
                 
