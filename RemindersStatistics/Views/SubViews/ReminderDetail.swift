@@ -59,7 +59,6 @@ struct ReminderDetail: View {
                 
                 HStack{
                     //Prioridade
-                    
                     Menu{
                         Button(action: {
                             novaPrioridade = 1.0
@@ -79,15 +78,12 @@ struct ReminderDetail: View {
                         
                     }label:{
                         simboloPrioridade(prioridade: $novaPrioridade)
-                            .frame(height: 40)
                     }
-                    
                     
                     Spacer()
                         .frame(width: 35)
                     
                     //Projeto
-                    
                     Button(action: {
                         print("ok")
                     }, label: {
@@ -183,19 +179,37 @@ struct simboloNome: View{
 struct simboloPrioridade: View{
     @Binding var prioridade: Double
     
+    var alturaFigura: CGFloat = 25
+    @Environment (\.colorScheme) var colorScheme
+    
     var body: some View{
-        if prioridade == 1.0{
-            Image(systemName: "exclamationmark")
-                .bold()
-        }else if prioridade == 2.0{
-            Image(systemName: "exclamationmark.2")
-                .bold()
-        }else if prioridade == 3.0{
-            Image(systemName: "exclamationmark.3")
-                .bold()
-        }else{
-            Image(systemName: "exclamationmark")
-                .bold()
+        ZStack{
+            
+            RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(colorScheme == .light ? brancoBotao : pretoBotao)
+                .frame(width: 40, height: 40)
+            
+            if prioridade == 1.0{
+                Image(systemName: "exclamationmark")
+                    .resizable()
+                    .frame(width: 5, height: alturaFigura)
+                    .bold()
+            }else if prioridade == 2.0{
+                Image(systemName: "exclamationmark.2")
+                    .resizable()
+                    .frame(width: 15, height: alturaFigura)
+                    .bold()
+            }else if prioridade == 3.0{
+                Image(systemName: "exclamationmark.3")
+                    .resizable()
+                    .frame(width: 22, height: alturaFigura)
+                    .bold()
+            }else{
+                Image(systemName: "exclamationmark")
+                    .resizable()
+                    .frame(width: 10, height: alturaFigura)
+                    .bold()
+            }
         }
     }
 }
