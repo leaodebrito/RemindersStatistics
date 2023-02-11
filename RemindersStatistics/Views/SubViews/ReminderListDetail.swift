@@ -12,7 +12,7 @@ struct ReminderListDetail: View {
     @State var nomeLembrete: String = "Lorem Ipsum"
     @State var notaLembrete: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     @State var concluido: Bool = false
-    @State var status: Float = 0
+    @State var status: Double = 0
     
     @Environment (\.colorScheme) var colorScheme
     
@@ -27,7 +27,7 @@ struct ReminderListDetail: View {
                     .padding(.bottom, 2)
                     .foregroundColor(colorScheme == .light ? .black : .white)
                 
-                barraDeEvolucao(status: status)
+                barraDeEvolucao(status: $status)
                     .padding(.vertical,2)
                 
                 Text(notaLembrete)
@@ -56,7 +56,7 @@ struct barraDeEvolucao: View{
     let alturaBarra: CGFloat = 10
     let corner: CGFloat = 5
     
-    @State var status: Float = 0
+    @Binding var status: Double
     
     var body: some View{
         

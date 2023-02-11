@@ -15,6 +15,7 @@ struct ReminderDetail: View {
     @State var novaNota: String = ""
     @State var novoURL: String = ""
     @State var novaPrioridade: Double = 1.0
+    @State var novoStatus: Double = 0
     
     
     @Environment (\.colorScheme) var colorScheme
@@ -54,28 +55,18 @@ struct ReminderDetail: View {
                 
                 Divider()
                 
-                barraDeEvolucao(status: lembrete.status)
+                barraDeEvolucao(status: $novoStatus)
                     .padding(.vertical)
+                    .onAppear(){
+                        novoStatus = lembrete.status
+                    }
                 
                 HStack{
                     //Prioridade
                     Menu{
-                        Button(action: {
-                            novaPrioridade = 1.0
-                        }, label: {
-                            simboloNome(simbolo: "exclamationmark", nome: "Prioridade 1")
-                        })
-                        Button(action: {
-                            novaPrioridade = 2.0
-                        }, label: {
-                            simboloNome(simbolo: "exclamationmark.2", nome: "Prioridade 2")
-                        })
-                        Button(action: {
-                            novaPrioridade = 3.0
-                        }, label: {
-                            simboloNome(simbolo: "exclamationmark.3", nome: "Prioridade 3")
-                        })
-                        
+                        Button(action: {novaPrioridade = 1.0}, label: {simboloNome(simbolo: "exclamationmark", nome: "Prioridade 1")})
+                        Button(action: {novaPrioridade = 2.0}, label: {simboloNome(simbolo: "exclamationmark.2", nome: "Prioridade 2")})
+                        Button(action: {novaPrioridade = 3.0}, label: {simboloNome(simbolo: "exclamationmark.3", nome: "Prioridade 3")})
                     }label:{
                         simboloPrioridade(prioridade: $novaPrioridade)
                     }
@@ -104,11 +95,14 @@ struct ReminderDetail: View {
                         .frame(width: 35)
                     
                     //Status
-                    Button(action: {
-                        print("ok")
-                    }, label: {
+                    Menu{
+                        Button(action: {novoStatus = 0.0}, label: {Text("Não iniciado")})
+                        Button(action: {novoStatus = 1.0}, label: {Text("Em desenvolvimento")})
+                        Button(action: {novoStatus = 2.0}, label: {Text("Concluído")})
+                    }label:{
                         imagemBotao(imagem: "play", alturaImagem: 25, larguraImagem: 20)
-                    })
+                    }
+                    
                     
                     Spacer()
                         .frame(width: 35)
@@ -149,15 +143,22 @@ struct ReminderDetail_Previews: PreviewProvider {
 
 
 
-//Estruturas de apoio
+//Mark: - Estruturas de apoio
+//Botão de mudança de status da atividade
 struct imagemBotao: View{
     @State var imagem: String = ""
     @State var alturaImagem: CGFloat = 30
     @State var larguraImagem: CGFloat = 30
+    @Environment (\.colorScheme) var colorScheme
     var body: some View{
-        Image(systemName: imagem)
-            .resizable()
-            .frame(width: larguraImagem, height: alturaImagem)
+        ZStack{
+            RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(colorScheme == .light ? brancoBotao : pretoBotao)
+                .frame(width: 40, height: 40)
+            Image(systemName: imagem)
+                .resizable()
+                .frame(width: larguraImagem, height: alturaImagem)
+        }
     }
 }
 
@@ -178,7 +179,6 @@ struct simboloNome: View{
 
 struct simboloPrioridade: View{
     @Binding var prioridade: Double
-    
     var alturaFigura: CGFloat = 25
     @Environment (\.colorScheme) var colorScheme
     
