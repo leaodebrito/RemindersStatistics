@@ -142,8 +142,7 @@ struct ReminderDetail_Previews: PreviewProvider {
 
 
 
-
-//Mark: - Estruturas de apoio
+//MARK: - Estruturas de apoio da vista
 //Botão de mudança de status da atividade
 struct imagemBotao: View{
     @State var imagem: String = ""
@@ -162,7 +161,8 @@ struct imagemBotao: View{
     }
 }
 
-
+//View com simbolo e texto
+/// "!! - Prioridade 2"
 struct simboloNome: View{
     @State var simbolo: String = ""
     @State var nome: String = ""
@@ -176,7 +176,8 @@ struct simboloNome: View{
 }
 
 
-
+//Estrutura para apresentação do simbolo de prioridade
+///Variação de exclamações (!, !! e !!!)
 struct simboloPrioridade: View{
     @Binding var prioridade: Double
     var alturaFigura: CGFloat = 25

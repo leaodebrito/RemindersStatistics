@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1051659299810FD006D7612 /* barraDeEvolucao.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1051658299810FD006D7612 /* barraDeEvolucao.swift */; };
 		C14014672984529E00ECDDC2 /* RemindersStatisticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14014662984529E00ECDDC2 /* RemindersStatisticsApp.swift */; };
 		C14014692984529E00ECDDC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14014682984529E00ECDDC2 /* ContentView.swift */; };
 		C140146B2984529F00ECDDC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C140146A2984529F00ECDDC2 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C1051658299810FD006D7612 /* barraDeEvolucao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barraDeEvolucao.swift; sourceTree = "<group>"; };
 		C14014632984529E00ECDDC2 /* RemindersStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindersStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C14014662984529E00ECDDC2 /* RemindersStatisticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersStatisticsApp.swift; sourceTree = "<group>"; };
 		C14014682984529E00ECDDC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				C17AB1362989C40300C126F9 /* MyTextFieldStyle.swift */,
 				C17AB1382989D26200C126F9 /* ProjectSelection.swift */,
 				C1DEFF4D298AD069007F1E8B /* ActGroupHorizontal.swift */,
+				C1051658299810FD006D7612 /* barraDeEvolucao.swift */,
 			);
 			path = InterfaceElements;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				C17AB13C2989D49800C126F9 /* Colors.swift in Sources */,
 				C17AB1372989C40300C126F9 /* MyTextFieldStyle.swift in Sources */,
 				C14135CB29919A3100C4294D /* ReminderListDetail.swift in Sources */,
+				C1051659299810FD006D7612 /* barraDeEvolucao.swift in Sources */,
 				C17AB13E2989DB1C00C126F9 /* ListOfAllProjects.swift in Sources */,
 				C1DEFF4C298AC873007F1E8B /* ReminderDetail.swift in Sources */,
 				C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */,
