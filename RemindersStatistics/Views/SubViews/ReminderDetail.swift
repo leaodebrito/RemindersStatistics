@@ -14,6 +14,7 @@ struct ReminderDetail: View {
     @State var novoTítulo: String = ""
     @State var novaNota: String = ""
     @State var novoURL: String = ""
+    @State var novaPrioridade: Double = 1.0
     
     
     @Environment (\.colorScheme) var colorScheme
@@ -22,7 +23,6 @@ struct ReminderDetail: View {
     var body: some View {
         ScrollView{
             VStack{
-                
                 TextEditor(text: $novoTítulo)
                     .font(.title)
                     .bold()
@@ -32,7 +32,7 @@ struct ReminderDetail: View {
                         novoTítulo = lembrete.titulo ?? ""
                     }
                     .padding(.top, 15)
-                    
+                
                 Divider()
                 
                 TextEditor(text: $novaNota)
@@ -59,11 +59,29 @@ struct ReminderDetail: View {
                 
                 HStack{
                     //Prioridade
-                    Button(action: {
-                        print("ok")
-                    }, label: {
-                        imagemBotao(imagem: "flag", alturaImagem: 30, larguraImagem: 22)
-                    })
+                    
+                    Menu{
+                        Button(action: {
+                            novaPrioridade = 1.0
+                        }, label: {
+                            simboloNome(simbolo: "exclamationmark", nome: "Prioridade 1")
+                        })
+                        Button(action: {
+                            novaPrioridade = 2.0
+                        }, label: {
+                            simboloNome(simbolo: "exclamationmark.2", nome: "Prioridade 2")
+                        })
+                        Button(action: {
+                            novaPrioridade = 3.0
+                        }, label: {
+                            simboloNome(simbolo: "exclamationmark.3", nome: "Prioridade 3")
+                        })
+                        
+                    }label:{
+                        simboloPrioridade(prioridade: $novaPrioridade)
+                            .frame(height: 40)
+                    }
+                    
                     
                     Spacer()
                         .frame(width: 35)
@@ -132,6 +150,10 @@ struct ReminderDetail_Previews: PreviewProvider {
 }
 
 
+
+
+
+//Estruturas de apoio
 struct imagemBotao: View{
     @State var imagem: String = ""
     @State var alturaImagem: CGFloat = 30
@@ -144,3 +166,36 @@ struct imagemBotao: View{
 }
 
 
+struct simboloNome: View{
+    @State var simbolo: String = ""
+    @State var nome: String = ""
+    
+    var body: some View{
+        HStack{
+            Image(systemName: simbolo)
+            Text(nome)
+        }
+    }
+}
+
+
+
+struct simboloPrioridade: View{
+    @Binding var prioridade: Double
+    
+    var body: some View{
+        if prioridade == 1.0{
+            Image(systemName: "exclamationmark")
+                .bold()
+        }else if prioridade == 2.0{
+            Image(systemName: "exclamationmark.2")
+                .bold()
+        }else if prioridade == 3.0{
+            Image(systemName: "exclamationmark.3")
+                .bold()
+        }else{
+            Image(systemName: "exclamationmark")
+                .bold()
+        }
+    }
+}

@@ -14,7 +14,7 @@ struct ReminderListDetail: View {
     @State var concluido: Bool = false
     @State var status: Float = 0
     
-    
+    @Environment (\.colorScheme) var colorScheme
     
     var body: some View {
         
@@ -25,6 +25,7 @@ struct ReminderListDetail: View {
                     .font(.title2)
                     .bold()
                     .padding(.bottom, 2)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
                 
                 barraDeEvolucao(status: status)
                     .padding(.vertical,2)
@@ -32,6 +33,7 @@ struct ReminderListDetail: View {
                 Text(notaLembrete)
                     .font(.callout)
                     .multilineTextAlignment(.leading)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
                 
                 
             

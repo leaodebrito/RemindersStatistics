@@ -58,10 +58,8 @@ struct ProjectList: View {
                             //MARK: - Todos os lembretes
                             //TODO: - implantar sheetview from lista
                             NavigationLink(destination: {
-                                ForEach(lembrete) { lembrete in
-                                    NavigationLink(destination: ReminderDetail(lembrete: lembrete), label: {
-                                        ReminderListDetail(nomeLembrete: lembrete.titulo ?? "-", notaLembrete: lembrete.notas ?? "-", concluido: lembrete.flag, status: lembrete.status)
-                                    })
+                                List(lembrete) { lembrete in
+                                    reminderButton(lembrete: lembrete)
                                     .navigationTitle("Todos os lembretes")
                                 }
                             }, label: {
