@@ -14,6 +14,8 @@ struct ProjectList: View {
     
     @Environment(\.managedObjectContext) private var moc
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "titulo", ascending: true)]) var lembrete: FetchedResults<Reminder>
+    @FetchRequest(entity: Reminder.entity(), sortDescriptors: [])
+    var lembretesCriados: FetchedResults<Reminder>
     
     
     @State var newReminder: Bool = false
@@ -58,9 +60,21 @@ struct ProjectList: View {
                             //MARK: - Todos os lembretes
                             //TODO: - implantar sheetview from lista
                             NavigationLink(destination: {
-                                List(lembrete) { lembrete in
-                                    reminderButton(lembrete: lembrete)
-                                    .navigationTitle("Todos os lembretes")
+                                List{
+                                    ForEach(lembrete) { lembrete in
+                                        reminderButton(lembrete: lembrete)
+                                            .navigationTitle("Todos os lembretes")
+                                    }.onDelete{ indexSet in
+                                        for index in indexSet {
+                                            moc.delete(lembrete[index])
+                                        }
+                                        do {
+                                            try moc.save()
+                                        } catch {
+                                            print(error.localizedDescription)
+                                        }
+                                        
+                                    }
                                 }
                             }, label: {
                                 ListCard(image: "archivebox", count: $totalProjetos, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
@@ -81,9 +95,22 @@ struct ProjectList: View {
                     
                     //MARK: - Lista Inbox
                     NavigationLink(destination: {
-                        List(lembrete) { lembrete in
-                            reminderButton(lembrete: lembrete)
-                            .navigationTitle("Inbox")
+                        List{
+                            ForEach(lembrete) { lembrete in
+                                reminderButton(lembrete: lembrete)
+                                    .navigationTitle("Inbox")
+                            }
+                            .onDelete{ indexSet in
+                                for index in indexSet {
+                                    moc.delete(lembrete[index])
+                                }
+                                do {
+                                    try moc.save()
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                                
+                            }
                         }
                     }, label: {
                         ActGroupHorizontal(listName: "Inbox", alturaRoundedRectangle: 100)

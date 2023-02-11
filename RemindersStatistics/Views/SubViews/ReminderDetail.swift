@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ReminderDetail: View {
     
+    @Environment(\.managedObjectContext) private var moc
     @State var lembrete: Reminder
+    //Fechar visualização do sheetview de criação de projeto
+    @Environment (\.presentationMode) var presentationMode
     
     @State var novoTítulo: String = ""
     @State var novaNota: String = ""
@@ -22,111 +25,133 @@ struct ReminderDetail: View {
 
     
     var body: some View {
-        ScrollView{
-            VStack{
-                TextEditor(text: $novoTítulo)
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(colorScheme == .light ? .black : .white)
-                    .lineLimit(2)
-                    .onAppear(){
-                        novoTítulo = lembrete.titulo ?? ""
+        NavigationView{
+            ScrollView{
+                VStack{
+                    TextEditor(text: $novoTítulo)
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(colorScheme == .light ? .black : .white)
+                        .lineLimit(2)
+                        .onAppear(){
+                            novoTítulo = lembrete.titulo ?? ""
+                        }
+                        .padding(.top, 15)
+                    
+                    Divider()
+                    
+                    TextEditor(text: $novaNota)
+                        .foregroundColor(.secondary)
+                        .onAppear(){
+                            novaNota = lembrete.notas ?? ""
+                        }
+                        .frame(height: 200)
+                    
+                    
+                    Divider()
+                    
+                    TextEditor(text: $novoURL)
+                        .font(.title3)
+                        .foregroundColor(.gray)
+                        .onAppear(){
+                            novoURL = lembrete.externalLink ?? "URL"
+                        }
+                    
+                    Divider()
+                    
+                    barraDeEvolucao(status: $novoStatus)
+                        .padding(.vertical)
+                        .onAppear(){
+                            novoStatus = lembrete.status
+                        }
+                    
+                    HStack{
+                        //Prioridade
+                        Menu{
+                            Button(action: {novaPrioridade = 1.0}, label: {simboloNome(simbolo: "exclamationmark", nome: "Prioridade 1")})
+                            Button(action: {novaPrioridade = 2.0}, label: {simboloNome(simbolo: "exclamationmark.2", nome: "Prioridade 2")})
+                            Button(action: {novaPrioridade = 3.0}, label: {simboloNome(simbolo: "exclamationmark.3", nome: "Prioridade 3")})
+                        }label:{
+                            simboloPrioridade(prioridade: $novaPrioridade)
+                        }
+                        
+                        Spacer()
+                            .frame(width: 35)
+                        
+                        //Projeto
+                        Button(action: {
+                            print("ok")
+                        }, label: {
+                            imagemBotao(imagem: "list.clipboard", alturaImagem: 30, larguraImagem: 20)
+                        })
+                        
+                        Spacer()
+                            .frame(width: 35)
+                        
+                        //Data e hora
+                        Button(action: {
+                            print("ok")
+                        }, label: {
+                            imagemBotao(imagem: "calendar", alturaImagem: 30, larguraImagem: 30)
+                        })
+                        
+                        Spacer()
+                            .frame(width: 35)
+                        
+                        //Status
+                        Menu{
+                            Button(action: {novoStatus = 0.0}, label: {Text("Não iniciado")})
+                            Button(action: {novoStatus = 1.0}, label: {Text("Em desenvolvimento")})
+                            Button(action: {novoStatus = 2.0}, label: {Text("Concluído")})
+                        }label:{
+                            imagemBotao(imagem: "play", alturaImagem: 25, larguraImagem: 20)
+                        }
+                        
+                        
+                        Spacer()
+                            .frame(width: 35)
+                        
+                        //Lembrete
+                        Button(action: {
+                            print("ok")
+                        }, label: {
+                            imagemBotao(imagem: "alarm", alturaImagem: 25, larguraImagem: 25)
+                        })
                     }
-                    .padding(.top, 15)
-                
-                Divider()
-                
-                TextEditor(text: $novaNota)
-                    .foregroundColor(.secondary)
-                    .onAppear(){
-                        novaNota = lembrete.notas ?? ""
-                    }
-                    .frame(height: 200)
-                
-                
-                Divider()
-                
-                TextEditor(text: $novoURL)
-                    .font(.title3)
-                    .foregroundColor(.gray)
-                    .onAppear(){
-                        novoURL = lembrete.externalLink ?? "URL"
-                    }
-                
-                Divider()
-                
-                barraDeEvolucao(status: $novoStatus)
-                    .padding(.vertical)
-                    .onAppear(){
-                        novoStatus = lembrete.status
-                    }
-                
-                HStack{
-                    //Prioridade
-                    Menu{
-                        Button(action: {novaPrioridade = 1.0}, label: {simboloNome(simbolo: "exclamationmark", nome: "Prioridade 1")})
-                        Button(action: {novaPrioridade = 2.0}, label: {simboloNome(simbolo: "exclamationmark.2", nome: "Prioridade 2")})
-                        Button(action: {novaPrioridade = 3.0}, label: {simboloNome(simbolo: "exclamationmark.3", nome: "Prioridade 3")})
-                    }label:{
-                        simboloPrioridade(prioridade: $novaPrioridade)
-                    }
-                    
-                    Spacer()
-                        .frame(width: 35)
-                    
-                    //Projeto
-                    Button(action: {
-                        print("ok")
-                    }, label: {
-                        imagemBotao(imagem: "list.clipboard", alturaImagem: 30, larguraImagem: 20)
-                    })
-                    
-                    Spacer()
-                        .frame(width: 35)
-                    
-                    //Data e hora
-                    Button(action: {
-                        print("ok")
-                    }, label: {
-                        imagemBotao(imagem: "calendar", alturaImagem: 30, larguraImagem: 30)
-                    })
-                    
-                    Spacer()
-                        .frame(width: 35)
-                    
-                    //Status
-                    Menu{
-                        Button(action: {novoStatus = 0.0}, label: {Text("Não iniciado")})
-                        Button(action: {novoStatus = 1.0}, label: {Text("Em desenvolvimento")})
-                        Button(action: {novoStatus = 2.0}, label: {Text("Concluído")})
-                    }label:{
-                        imagemBotao(imagem: "play", alturaImagem: 25, larguraImagem: 20)
-                    }
                     
                     
-                    Spacer()
-                        .frame(width: 35)
                     
-                    //Lembrete
-                    Button(action: {
-                        print("ok")
-                    }, label: {
-                        imagemBotao(imagem: "alarm", alturaImagem: 25, larguraImagem: 25)
-                    })
+                    
                 }
-                
-                
-                
-                    
-            }
-            .padding(.horizontal)
-            .toolbar{
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Button(action: {
-                        print("ok")
-                    }, label: {
-                        Text("Salvar!")
-                    })
+                .padding(.horizontal)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Button(action: {
+                            print("Adicionado")
+                            
+                            let lembrete = Reminder (context: moc)
+                            lembrete.id = UUID()
+                            lembrete.titulo = novoTítulo
+                            lembrete.notas = novaNota
+                            lembrete.priority = novaPrioridade
+                            lembrete.status = novoStatus
+                            
+                            
+                            do {
+                                try moc.save()
+                                print("Projeto Salvo")
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                                    presentationMode.wrappedValue.dismiss()
+                                }
+                                
+                            } catch {
+                                print(error.localizedDescription)
+                            }
+                        }, label: {
+                            Text("Salvar!")
+                        })
+                    }
                 }
             }
         }

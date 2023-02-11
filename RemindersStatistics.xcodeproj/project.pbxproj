@@ -75,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C105165A299820B0006D7612 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
 		C140145A2984529E00ECDDC2 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +109,7 @@
 				C1DEFF46298AC146007F1E8B /* Model */,
 				C1C3A848298839FE006C4D19 /* InterfaceElements */,
 				C17AB13A2989D47C00C126F9 /* Helper */,
+				C105165A299820B0006D7612 /* Deprecated */,
 				C140146A2984529F00ECDDC2 /* Assets.xcassets */,
 				C140146C2984529F00ECDDC2 /* Preview Content */,
 				C1C3A844298833B3006C4D19 /* dataController.swift */,
@@ -123,7 +132,6 @@
 				C1C3A84629883688006C4D19 /* ProjectList.swift */,
 				C140147C2985C56D00ECDDC2 /* GeneralStatistics.swift */,
 				C140147E2985C57D00ECDDC2 /* EspecificStatistics.swift */,
-				C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */,
 				C15395B229884C8F00B85532 /* SubViews */,
 			);
 			path = Views;
