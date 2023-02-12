@@ -20,6 +20,7 @@ struct ReminderDetail: View {
     @State var novaPrioridade: Double = 1.0
     @State var novoStatus: Double = 0
     
+    @State private var novaData = Date.now
     
     @Environment (\.colorScheme) var colorScheme
 
@@ -60,6 +61,12 @@ struct ReminderDetail: View {
                     
                     Divider()
                     
+                    DatePicker(selection: $novaData, displayedComponents: .date) {
+                        Text("Data limite")
+                    }
+                    
+                    Divider()
+                    
                     barraDeEvolucao(status: $novoStatus)
                         .padding(.vertical)
                         .onAppear(){
@@ -88,17 +95,7 @@ struct ReminderDetail: View {
                         
                         Spacer()
                             .frame(width: 35)
-                        
-                        //Data e hora
-                        Button(action: {
-                            print("ok")
-                        }, label: {
-                            imagemBotao(imagem: "calendar", alturaImagem: 30, larguraImagem: 30)
-                        })
-                        
-                        Spacer()
-                            .frame(width: 35)
-                        
+                   
                         //Status
                         Menu{
                             Button(action: {novoStatus = 0.0}, label: {Text("Não iniciado")})
@@ -119,8 +116,6 @@ struct ReminderDetail: View {
                             imagemBotao(imagem: "alarm", alturaImagem: 25, larguraImagem: 25)
                         })
                     }
-                    
-                    
                     
                     
                 }
