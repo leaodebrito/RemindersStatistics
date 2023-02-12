@@ -14,8 +14,6 @@ struct ProjectList: View {
     
     @Environment(\.managedObjectContext) private var moc
     @FetchRequest(sortDescriptors: [NSSortDescriptor(key: "titulo", ascending: true)]) var lembrete: FetchedResults<Reminder>
-    @FetchRequest(entity: Reminder.entity(), sortDescriptors: [])
-    var lembretesCriados: FetchedResults<Reminder>
     
     
     @State var newReminder: Bool = false
@@ -26,17 +24,7 @@ struct ProjectList: View {
     @State var totalProjetosConcluídos: Int = 0
     
     @State var isPresentedLista: Bool = false
-    
-    
-    
-    //Calculo de quantidade de lembretes
-    func remindersAmount() -> Int{
-        var count = 0
-        for _ in lembrete{
-            count = count + 1
-        }
-        return count
-    }
+  
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
@@ -56,30 +44,13 @@ struct ProjectList: View {
                                 .shadow(radius: 10)
                                 .padding(.trailing, 5)
                             
-                            
                             //MARK: - Todos os lembretes
                             //TODO: - implantar sheetview from lista
-                            NavigationLink(destination: {
-                                List{
-                                    ForEach(lembrete) { lembrete in
-                                        reminderButton(lembrete: lembrete)
-                                            .navigationTitle("Todos os lembretes")
-                                    }
-                                    .onDelete{ indexSet in for index in indexSet {moc.delete(lembrete[index])}
-                                        do {try moc.save()} catch {print(error.localizedDescription)}
-                                    }
-                                }.toolbar{ToolbarItem(placement: .navigationBarTrailing){EditButton()}}
-                            }, label: {
-                                ListCard(image: "archivebox", count: $totalProjetos, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
-                                    .shadow(radius: 10)
-                            })
-                            
-                            
+                            ListaTodos(totalProjetos: remindersAmount())
                         }
                         .padding(.horizontal)
                         .frame(height: 250)
                     }
-                    
                     
                     Text("Grupos de atividades")
                         .font(.title2)
@@ -88,21 +59,7 @@ struct ProjectList: View {
                         .padding(.leading)
                     
                     //MARK: - Lista Inbox
-                    NavigationLink(destination: {
-                        List{
-                            ForEach(lembrete) { lembrete in
-                                reminderButton(lembrete: lembrete)
-                                    .navigationTitle("Inbox")
-                            }
-                            .onDelete{ indexSet in for index in indexSet {moc.delete(lembrete[index])}
-                                do {try moc.save()} catch {print(error.localizedDescription)}
-                            }
-                        }.toolbar{ToolbarItem(placement: .navigationBarTrailing){EditButton()}}
-                    }, label: {
-                        ActGroupHorizontal(listName: "Inbox", alturaRoundedRectangle: 100)
-                            .padding(.horizontal)
-                    })
-                    .padding(.bottom)
+                    ListaInbox()
                     
                     //MARK: - Grupos de atividades
                     LazyVGrid(columns: columns){
@@ -140,6 +97,16 @@ struct ProjectList: View {
         }
 
     }
+    
+    //MARK: - Funções utilizadas
+    //Calculo de quantidade de lembretes
+    func remindersAmount() -> Int{
+        var count = 0
+        for _ in lembrete{
+            count = count + 1
+        }
+        return count
+    }
 }
 
 struct ReminderList_Previews: PreviewProvider {
@@ -147,11 +114,6 @@ struct ReminderList_Previews: PreviewProvider {
         ProjectList()
     }
 }
-
-
-
-
-
 
 
 //MARK: - Abre sheetview a partir da lista de tarefas
@@ -167,3 +129,6 @@ struct reminderButton: View{
         }
     }
 }
+
+
+
