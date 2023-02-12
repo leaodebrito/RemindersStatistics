@@ -140,11 +140,11 @@
 		C15395B229884C8F00B85532 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */,
+				C14135CA29919A3100C4294D /* ReminderListDetail.swift */,
 				C15395B329884CA500B85532 /* NewReminder.swift */,
 				C15395B529884EAD00B85532 /* NewProject.swift */,
 				C17AB13D2989DB1C00C126F9 /* ListOfAllProjects.swift */,
-				C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */,
-				C14135CA29919A3100C4294D /* ReminderListDetail.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";

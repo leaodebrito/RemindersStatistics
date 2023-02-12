@@ -32,7 +32,7 @@ struct ReminderDetail: View {
                         .font(.title)
                         .bold()
                         .foregroundColor(colorScheme == .light ? .black : .white)
-                        .lineLimit(2)
+                        .lineLimit(2...7)
                         .onAppear(){
                             novoTítulo = lembrete.titulo ?? ""
                         }
@@ -42,10 +42,10 @@ struct ReminderDetail: View {
                     
                     TextEditor(text: $novaNota)
                         .foregroundColor(.secondary)
+                        .lineLimit(2...7)
                         .onAppear(){
                             novaNota = lembrete.notas ?? ""
                         }
-                        .frame(height: 200)
                     
                     
                     Divider()
@@ -53,6 +53,7 @@ struct ReminderDetail: View {
                     TextEditor(text: $novoURL)
                         .font(.title3)
                         .foregroundColor(.gray)
+                        .lineLimit(2...7)
                         .onAppear(){
                             novoURL = lembrete.externalLink ?? "URL"
                         }
