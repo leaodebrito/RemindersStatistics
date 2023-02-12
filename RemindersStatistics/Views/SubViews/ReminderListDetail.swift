@@ -40,13 +40,14 @@ struct ReminderListDetail: View {
                 Text(notaLembrete)
                     .font(.callout)
                     .multilineTextAlignment(.leading)
+                    .lineLimit(2...7)
                     .foregroundColor(colorScheme == .light ? .black : .white)
                 
                 
             
             }
         }
-        .frame(maxWidth: .infinity, minHeight: 60, idealHeight: 120, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
         
     }
 }
