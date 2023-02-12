@@ -59,27 +59,8 @@ struct ProjectList: View {
                             
                             //MARK: - Todos os lembretes
                             //TODO: - implantar sheetview from lista
-                            NavigationLink(destination: {
-                                List{
-                                    ForEach(lembrete) { lembrete in
-                                        reminderButton(lembrete: lembrete)
-                                            .navigationTitle("Todos os lembretes")
-                                    }.onDelete{ indexSet in
-                                        for index in indexSet {
-                                            moc.delete(lembrete[index])
-                                        }
-                                        do {
-                                            try moc.save()
-                                        } catch {
-                                            print(error.localizedDescription)
-                                        }
-                                        
-                                    }
-                                }
-                            }, label: {
-                                ListCard(image: "archivebox", count: $totalProjetos, listName: "Todos", colorLight: azulClaroBotao, colorDark: azulEscuroBotao)
-                                    .shadow(radius: 10)
-                            })
+                             
+                            
                             
                         }
                         .padding(.horizontal)
@@ -100,18 +81,10 @@ struct ProjectList: View {
                                 reminderButton(lembrete: lembrete)
                                     .navigationTitle("Inbox")
                             }
-                            .onDelete{ indexSet in
-                                for index in indexSet {
-                                    moc.delete(lembrete[index])
-                                }
-                                do {
-                                    try moc.save()
-                                } catch {
-                                    print(error.localizedDescription)
-                                }
-                                
+                            .onDelete{ indexSet in for index in indexSet {moc.delete(lembrete[index])}
+                                do {try moc.save()} catch {print(error.localizedDescription)}
                             }
-                        }
+                        }.toolbar{ToolbarItem(placement: .navigationBarTrailing){EditButton()}}
                     }, label: {
                         ActGroupHorizontal(listName: "Inbox", alturaRoundedRectangle: 100)
                             .padding(.horizontal)
@@ -152,6 +125,7 @@ struct ProjectList: View {
                 .sheet(isPresented: $newProject){NewProject()}
                 .onAppear(perform: {self.totalProjetos = remindersAmount()})
         }
+
     }
 }
 
