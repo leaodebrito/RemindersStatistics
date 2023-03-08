@@ -13,6 +13,8 @@ struct NewReminder: View {
     @Environment(\.managedObjectContext) private var moc
     @FetchRequest(sortDescriptors: []) var lembrete: FetchedResults<Reminder>
     
+    
+    
     //Fechar visualização do sheetview de criação de projeto
     @Environment (\.presentationMode) var presentationMode
     

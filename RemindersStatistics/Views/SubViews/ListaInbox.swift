@@ -20,11 +20,18 @@ struct ListaInbox: View {
                     reminderButton(lembrete: lembrete)
                         .navigationTitle("Inbox")
                 }
-                .onDelete{ indexSet in for index in indexSet {moc.delete(lembrete[index])}
+                .onDelete{ indexSet in
+                    for index in indexSet {
+                        moc.delete(lembrete[index])
+                    }
                     do {try moc.save()} catch {print(error.localizedDescription)}
-                    
+                  }
+                 
+            }.toolbar{
+                ToolbarItem(placement: .navigationBarTrailing){
+                    EditButton()
                 }
-            }.toolbar{ToolbarItem(placement: .navigationBarTrailing){EditButton()}}
+            }
         }, label: {
             ActGroupHorizontal(listName: "Inbox", alturaRoundedRectangle: 100)
                 .padding(.horizontal)

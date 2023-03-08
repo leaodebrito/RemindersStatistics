@@ -116,19 +116,6 @@ struct ReminderList_Previews: PreviewProvider {
 }
 
 
-//MARK: - Abre sheetview a partir da lista de tarefas
-struct reminderButton: View{
-    @State var showSheet = false
-    var lembrete: Reminder
-
-    var body: some View {
-        Button(action:{self.showSheet = true}){
-            ReminderListDetail(nomeLembrete: lembrete.titulo ?? "-", notaLembrete: lembrete.notas ?? "-", concluido: lembrete.flag, status: lembrete.status)
-        }.sheet(isPresented: $showSheet){
-            ReminderDetail(lembrete: lembrete)
-        }
-    }
-}
 
 
 

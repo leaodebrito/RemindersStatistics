@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-struct ReminderStruct: Identifiable {
+struct ReminderStruct {
     var id: UUID
     var priority: Int
     var list: String

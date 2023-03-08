@@ -125,7 +125,8 @@ struct ReminderDetail: View {
                         Button(action: {
                             print("Adicionado")
                             
-                            let lembrete = Reminder (context: moc)
+                            //A linha abaixo cria um novo lembrete segundo o contexto moc
+                            //let lembrete = Reminder (context: moc)
                             lembrete.id = UUID()
                             lembrete.titulo = novoTítulo
                             lembrete.notas = novaNota

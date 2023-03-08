@@ -74,7 +74,7 @@ struct simboloPrioridadeTag: View{
             if prioridade == 1.0{
                 Image(systemName: "exclamationmark")
                     .resizable()
-                    .frame(width: 5, height: alturaFigura)
+                    .frame(width: 2, height: alturaFigura)
                     .foregroundColor(colorScheme == .light ? .gray : .white)
             }else if prioridade == 2.0{
                 Image(systemName: "exclamationmark.2")
@@ -89,7 +89,7 @@ struct simboloPrioridadeTag: View{
             }else{
                 Image(systemName: "exclamationmark")
                     .resizable()
-                    .frame(width: 5, height: alturaFigura)
+                    .frame(width: 2, height: alturaFigura)
                     .foregroundColor(colorScheme == .light ? .gray : .white)
             }
         }
