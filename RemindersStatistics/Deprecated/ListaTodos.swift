@@ -39,17 +39,3 @@ struct ListaTodos: View {
 }
 
 
-//MARK: - Abre sheetview a partir da lista de tarefas
-//Essa struct é utilizada em todas as vistas que apresentação atividades por meio de List{ ForEach{}}
-struct reminderButton: View{
-    @State var showSheet = false
-    var lembrete: Reminder
-
-    var body: some View {
-        Button(action:{self.showSheet = true}){
-            ReminderListDetail(nomeLembrete: lembrete.titulo ?? "-", notaLembrete: lembrete.notas ?? "-", concluido: lembrete.flag, status: lembrete.status)
-        }.sheet(isPresented: $showSheet){
-            ReminderDetail(lembrete: lembrete)
-        }
-    }
-}
