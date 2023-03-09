@@ -26,7 +26,6 @@ struct ListaDeLembretes: View {
                 }
                 
             }
-            .padding(.top)
             .navigationTitle("Lembretes")
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
@@ -49,6 +48,10 @@ struct ListaDeLembretes: View {
                 .sheet(isPresented: $newProject){NewProject()}
         }
     }
+    
+
+    
+    
 }
 
 struct ListaDeLembretes_Previews: PreviewProvider {
@@ -73,3 +76,6 @@ struct reminderButton: View{
         }
     }
 }
+
+
+
