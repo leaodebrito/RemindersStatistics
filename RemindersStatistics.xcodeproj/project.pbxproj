@@ -13,12 +13,12 @@
 		C140146B2984529F00ECDDC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C140146A2984529F00ECDDC2 /* Assets.xcassets */; };
 		C140146E2984529F00ECDDC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C140146D2984529F00ECDDC2 /* Preview Assets.xcassets */; };
 		C140147D2985C56D00ECDDC2 /* GeneralStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140147C2985C56D00ECDDC2 /* GeneralStatistics.swift */; };
-		C140147F2985C57D00ECDDC2 /* EspecificStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C140147E2985C57D00ECDDC2 /* EspecificStatistics.swift */; };
 		C14014882985FC2200ECDDC2 /* Shift in Frameworks */ = {isa = PBXBuildFile; productRef = C14014872985FC2200ECDDC2 /* Shift */; };
 		C14135CB29919A3100C4294D /* ReminderListDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14135CA29919A3100C4294D /* ReminderListDetail.swift */; };
 		C15395B12988483A00B85532 /* ActGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15395B02988483A00B85532 /* ActGroup.swift */; };
 		C15395B429884CA500B85532 /* NewReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15395B329884CA500B85532 /* NewReminder.swift */; };
 		C15395B629884EAD00B85532 /* NewProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15395B529884EAD00B85532 /* NewProject.swift */; };
+		C1600D6629B95779000119A5 /* ListaDeLembretes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1600D6529B95779000119A5 /* ListaDeLembretes.swift */; };
 		C17AB1372989C40300C126F9 /* MyTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB1362989C40300C126F9 /* MyTextFieldStyle.swift */; };
 		C17AB1392989D26200C126F9 /* ProjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB1382989D26200C126F9 /* ProjectSelection.swift */; };
 		C17AB13C2989D49800C126F9 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AB13B2989D49800C126F9 /* Colors.swift */; };
@@ -44,11 +44,11 @@
 		C140146A2984529F00ECDDC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C140146D2984529F00ECDDC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C140147C2985C56D00ECDDC2 /* GeneralStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStatistics.swift; sourceTree = "<group>"; };
-		C140147E2985C57D00ECDDC2 /* EspecificStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EspecificStatistics.swift; sourceTree = "<group>"; };
 		C14135CA29919A3100C4294D /* ReminderListDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListDetail.swift; sourceTree = "<group>"; };
 		C15395B02988483A00B85532 /* ActGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActGroup.swift; sourceTree = "<group>"; };
 		C15395B329884CA500B85532 /* NewReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReminder.swift; sourceTree = "<group>"; };
 		C15395B529884EAD00B85532 /* NewProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProject.swift; sourceTree = "<group>"; };
+		C1600D6529B95779000119A5 /* ListaDeLembretes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeLembretes.swift; sourceTree = "<group>"; };
 		C17AB13429898F6D00C126F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C17AB1362989C40300C126F9 /* MyTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextFieldStyle.swift; sourceTree = "<group>"; };
 		C17AB1382989D26200C126F9 /* ProjectSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSelection.swift; sourceTree = "<group>"; };
@@ -82,7 +82,12 @@
 		C105165A299820B0006D7612 /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				C17AB13D2989DB1C00C126F9 /* ListOfAllProjects.swift */,
+				C1812521299965B60025DCEB /* ListaInbox.swift */,
+				C181251F2999657E0025DCEB /* ListaTodos.swift */,
+				C1C3A84629883688006C4D19 /* ProjectList.swift */,
 				C1DEFF49298AC7FE007F1E8B /* AllRemindersList.swift */,
+				C15395B529884EAD00B85532 /* NewProject.swift */,
 			);
 			path = Deprecated;
 			sourceTree = "<group>";
@@ -133,9 +138,8 @@
 		C140147B2985C54800ECDDC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C1C3A84629883688006C4D19 /* ProjectList.swift */,
+				C1600D6529B95779000119A5 /* ListaDeLembretes.swift */,
 				C140147C2985C56D00ECDDC2 /* GeneralStatistics.swift */,
-				C140147E2985C57D00ECDDC2 /* EspecificStatistics.swift */,
 				C15395B229884C8F00B85532 /* SubViews */,
 			);
 			path = Views;
@@ -147,10 +151,6 @@
 				C1DEFF4B298AC873007F1E8B /* ReminderDetail.swift */,
 				C14135CA29919A3100C4294D /* ReminderListDetail.swift */,
 				C15395B329884CA500B85532 /* NewReminder.swift */,
-				C15395B529884EAD00B85532 /* NewProject.swift */,
-				C17AB13D2989DB1C00C126F9 /* ListOfAllProjects.swift */,
-				C181251F2999657E0025DCEB /* ListaTodos.swift */,
-				C1812521299965B60025DCEB /* ListaInbox.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -264,6 +264,7 @@
 				C140147D2985C56D00ECDDC2 /* GeneralStatistics.swift in Sources */,
 				C1DEFF50298AD726007F1E8B /* RemindersCalculation.swift in Sources */,
 				C1C3A84329883273006C4D19 /* Reminders.xcdatamodeld in Sources */,
+				C1600D6629B95779000119A5 /* ListaDeLembretes.swift in Sources */,
 				C14014692984529E00ECDDC2 /* ContentView.swift in Sources */,
 				C17AB13C2989D49800C126F9 /* Colors.swift in Sources */,
 				C17AB1372989C40300C126F9 /* MyTextFieldStyle.swift in Sources */,
@@ -274,7 +275,6 @@
 				C18125202999657E0025DCEB /* ListaTodos.swift in Sources */,
 				C1C3A84729883688006C4D19 /* ProjectList.swift in Sources */,
 				C1DEFF48298AC1BB007F1E8B /* ReminderStruct.swift in Sources */,
-				C140147F2985C57D00ECDDC2 /* EspecificStatistics.swift in Sources */,
 				C14014672984529E00ECDDC2 /* RemindersStatisticsApp.swift in Sources */,
 				C1DEFF4E298AD069007F1E8B /* ActGroupHorizontal.swift in Sources */,
 				C1812522299965B60025DCEB /* ListaInbox.swift in Sources */,

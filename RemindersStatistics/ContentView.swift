@@ -12,7 +12,8 @@ struct ContentView: View {
     
     var body: some View {
         TabView{
-            ProjectList()
+            //ProjectList()
+            ListaDeLembretes()
                 .tabItem{
                     Label("Tarefas", systemImage: "checklist")
                 }
