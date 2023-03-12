@@ -20,9 +20,10 @@ struct ReminderDetail: View {
     @State var novaPrioridade: Double = 1.0
     @State var novoStatus: Double = 0
     
-    @State private var novaData = Date.now
+    @State var novaData: Date =  Date.now
     
     @Environment (\.colorScheme) var colorScheme
+    @Environment(\.openURL) var openURL
 
     
     var body: some View {
@@ -51,13 +52,26 @@ struct ReminderDetail: View {
                     
                     Divider()
                     
-                    TextEditor(text: $novoURL)
-                        .font(.title3)
-                        .foregroundColor(.gray)
-                        .lineLimit(2...7)
-                        .onAppear(){
-                            novoURL = lembrete.externalLink ?? "URL"
+                    HStack{
+                        TextField("URL", text: $novoURL)
+                            .font(.title3)
+                            .foregroundColor(.gray)
+                            .lineLimit(2...7)
+                            .onAppear(){
+                                novoURL = lembrete.externalLink ?? ""
+                            }
+                        
+                        //TODO: - Corrigir erro de abertura de URL
+                        if novoURL != ""{
+                            Button(action: {
+                                    openURL(URL(string: novoURL)!)
+                            }, label: {
+                                Image(systemName: "link.circle.fill")
+                                    .font(.largeTitle)
+                            })
                         }
+                        
+                    }
                     
                     Divider()
                     
@@ -74,6 +88,9 @@ struct ReminderDetail: View {
                         }
                     
                     HStack{
+                        Spacer()
+                        
+                    
                         //Prioridade
                         Menu{
                             Button(action: {novaPrioridade = 1.0}, label: {simboloNome(simbolo: "exclamationmark", nome: "Prioridade 1")})
@@ -82,16 +99,6 @@ struct ReminderDetail: View {
                         }label:{
                             simboloPrioridade(prioridade: $novaPrioridade)
                         }
-                        
-                        Spacer()
-                            .frame(width: 35)
-                        
-                        //Projeto
-                        Button(action: {
-                            print("ok")
-                        }, label: {
-                            imagemBotao(imagem: "list.clipboard", alturaImagem: 30, larguraImagem: 20)
-                        })
                         
                         Spacer()
                             .frame(width: 35)
@@ -132,6 +139,8 @@ struct ReminderDetail: View {
                             lembrete.notas = novaNota
                             lembrete.priority = novaPrioridade
                             lembrete.status = novoStatus
+                            lembrete.date = novaData
+                            lembrete.externalLink = novoURL
                             
                             
                             do {
